@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2010525381028162923}
   - component: {fileID: 7576750686120761662}
   m_Layer: 3
-  m_Name: Maialino
+  m_Name: Maialino_prefab
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
