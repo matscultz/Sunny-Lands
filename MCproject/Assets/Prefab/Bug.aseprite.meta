@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9d4bf8ccfe8833648beaeadad4f1625d
+guid: 3834f1263aaf17840a9a8449f3908fbe
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638607229602079420
+  platformSettingsDirtyTick: 638607230882131413
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,7 +121,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: character_enemy_Frame_0
+  - name: Bug_Frame_0
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 75
       width: 8
       height: 1
-    spriteID: 9b5a74994227bbd45a65d8e14c6a38c6
+    spriteID: f0c6e0ef210dbbe45938f02dbc8ab40b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,7 +141,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 113, y: 75}
-  - name: character_enemy_Frame_1
+  - name: Bug_Frame_1
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -152,7 +152,7 @@ ScriptedImporter:
       y: 119
       width: 16
       height: 3
-    spriteID: 576418d8cc5967949ba4854998ff7841
+    spriteID: 2c9b382ab631b1d4b903b3fe5327f911
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -161,7 +161,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 119}
-  - name: character_enemy_Frame_2
+  - name: Bug_Frame_2
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -172,7 +172,7 @@ ScriptedImporter:
       y: 75
       width: 16
       height: 11
-    spriteID: 12a49f96121f62249a588dc48802531e
+    spriteID: b97f24448deed1b4594dde7f611a68bb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -181,7 +181,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 89, y: 75}
-  - name: character_enemy_Frame_3
+  - name: Bug_Frame_3
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -192,7 +192,7 @@ ScriptedImporter:
       y: 52
       width: 20
       height: 13
-    spriteID: 9b0a589070d00ef41b8c96480a0f1846
+    spriteID: 21da93ac898e9394598b369dda3a424a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -201,7 +201,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 82, y: 52}
-  - name: character_enemy_Frame_4
+  - name: Bug_Frame_4
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -212,7 +212,7 @@ ScriptedImporter:
       y: 29
       width: 20
       height: 15
-    spriteID: 9462c4487175c9c4c8ef2ab6b8fdac89
+    spriteID: edf4d1970bc6e934a8000ac6ea87ac91
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -221,7 +221,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 29}
-  - name: character_enemy_Frame_5
+  - name: Bug_Frame_5
     originalName: 
     pivot: {x: 0.4166667, y: 0}
     alignment: 9
@@ -232,7 +232,7 @@ ScriptedImporter:
       y: 4
       width: 24
       height: 17
-    spriteID: 6f2034f33a9c50c48ab336d53b386b04
+    spriteID: 2b4f51c9ef6b8944fad28675ebef513b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -241,7 +241,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: character_enemy_Frame_6
+  - name: Bug_Frame_6
     originalName: 
     pivot: {x: 0.39999998, y: 0}
     alignment: 9
@@ -252,7 +252,7 @@ ScriptedImporter:
       y: 4
       width: 25
       height: 16
-    spriteID: 23b5ec9bf3e227e48a7c29cf0845fb69
+    spriteID: f46dc09533d282a45887ba1a85fc2e7e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -261,7 +261,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 36, y: 4}
-  - name: character_enemy_Frame_7
+  - name: Bug_Frame_7
     originalName: 
     pivot: {x: 0.4166667, y: 0}
     alignment: 9
@@ -272,7 +272,7 @@ ScriptedImporter:
       y: 4
       width: 24
       height: 13
-    spriteID: a823f274c7f8e4b49800c0bd75608d8d
+    spriteID: a25b3b517b73f7e44a8e0c0b3e9cc300
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -281,7 +281,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 98, y: 4}
-  - name: character_enemy_Frame_8
+  - name: Bug_Frame_8
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -292,7 +292,7 @@ ScriptedImporter:
       y: 29
       width: 20
       height: 15
-    spriteID: 61693183a10ba84419cf9169a04ca375
+    spriteID: b55450530b37e884f8fa4db9d8825cce
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -301,7 +301,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 32, y: 29}
-  - name: character_enemy_Frame_9
+  - name: Bug_Frame_9
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -312,7 +312,7 @@ ScriptedImporter:
       y: 52
       width: 18
       height: 15
-    spriteID: e1f72b6ddb59fb94f8d6e513f4248c45
+    spriteID: a67f0093f1ff004418134427f67ab9d6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -321,7 +321,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 52}
-  - name: character_enemy_Frame_10
+  - name: Bug_Frame_10
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -332,7 +332,7 @@ ScriptedImporter:
       y: 96
       width: 16
       height: 15
-    spriteID: 29d2a3e59d877f54aac8aefc2e12b3ae
+    spriteID: c2ece64956c879444b498d68e3d6fa36
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -341,7 +341,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 96}
-  - name: character_enemy_Frame_11
+  - name: Bug_Frame_11
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -352,7 +352,7 @@ ScriptedImporter:
       y: 52
       width: 18
       height: 15
-    spriteID: d14f5a52e836c3245a58b5d0fe4171e4
+    spriteID: 6bef525c231ea604db3a902790221786
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -361,7 +361,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 30, y: 52}
-  - name: character_enemy_Frame_12
+  - name: Bug_Frame_12
     originalName: 
     pivot: {x: 0.47619048, y: 0}
     alignment: 9
@@ -372,7 +372,7 @@ ScriptedImporter:
       y: 4
       width: 21
       height: 15
-    spriteID: de363d67add121a4981476fe1a92cab0
+    spriteID: b1441a50d54d81e4c99059fa3809ad2c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -381,7 +381,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 69, y: 4}
-  - name: character_enemy_Frame_13
+  - name: Bug_Frame_13
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -392,7 +392,7 @@ ScriptedImporter:
       y: 52
       width: 18
       height: 15
-    spriteID: 508c0121b7342b649a9d791da2f329fd
+    spriteID: 09ab587a0414eab4ba5960052a8b9213
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -401,7 +401,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 56, y: 52}
-  - name: character_enemy_Frame_14
+  - name: Bug_Frame_14
     originalName: 
     pivot: {x: 0.5263158, y: 0}
     alignment: 9
@@ -412,7 +412,7 @@ ScriptedImporter:
       y: 75
       width: 19
       height: 13
-    spriteID: 5844f92261cf67c45bbf394138358423
+    spriteID: 2c7bfd9f2896d4f4f80814c6d4a05f06
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -421,7 +421,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 75}
-  - name: character_enemy_Frame_15
+  - name: Bug_Frame_15
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -432,7 +432,7 @@ ScriptedImporter:
       y: 29
       width: 20
       height: 15
-    spriteID: ae0dc8a6a38005d4cac838265afa8f8e
+    spriteID: 50f17260f3469d54e94f60a365a08fb6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -441,7 +441,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 60, y: 29}
-  - name: character_enemy_Frame_16
+  - name: Bug_Frame_16
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -452,7 +452,7 @@ ScriptedImporter:
       y: 29
       width: 20
       height: 14
-    spriteID: aae8d845671550c4794502a3845ee8be
+    spriteID: f05a951ba18f4854087169743bd5acd9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -461,7 +461,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 88, y: 29}
-  - name: character_enemy_Frame_17
+  - name: Bug_Frame_17
     originalName: 
     pivot: {x: 0.6363636, y: -0.05882353}
     alignment: 9
@@ -472,7 +472,7 @@ ScriptedImporter:
       y: 96
       width: 11
       height: 17
-    spriteID: c6c71a6eb4f09db49bd68efd8c16b8d3
+    spriteID: e8cbc467c90535c43bf2d571b3edd8a2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -481,7 +481,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 28, y: 96}
-  - name: character_enemy_Frame_18
+  - name: Bug_Frame_18
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -492,7 +492,7 @@ ScriptedImporter:
       y: 75
       width: 20
       height: 11
-    spriteID: b98a86e1b0e134141b02655f24d64ce0
+    spriteID: 2a6a8f5933666414c87a9203ab13321f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -501,7 +501,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 31, y: 75}
-  - name: character_enemy_Frame_19
+  - name: Bug_Frame_19
     originalName: 
     pivot: {x: 0.54545456, y: 0}
     alignment: 9
@@ -512,7 +512,7 @@ ScriptedImporter:
       y: 75
       width: 22
       height: 10
-    spriteID: de7f7e33bcef2554faabe31931e01dfc
+    spriteID: 277976a5cdc7a734f9a8b22d7bb4bba1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -524,13 +524,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 783752650
-    name: character_enemy
+    guid: 1911884272
+    name: Bug
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: character_enemy_Frame_0
+    - name: Bug_Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -538,8 +538,8 @@ ScriptedImporter:
         y: 0
         width: 8
         height: 1
-      spriteId: 9b5a74994227bbd45a65d8e14c6a38c6
-    - name: character_enemy_Frame_1
+      spriteId: f0c6e0ef210dbbe45938f02dbc8ab40b
+    - name: Bug_Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -547,8 +547,8 @@ ScriptedImporter:
         y: 0
         width: 16
         height: 3
-      spriteId: 576418d8cc5967949ba4854998ff7841
-    - name: character_enemy_Frame_2
+      spriteId: 2c9b382ab631b1d4b903b3fe5327f911
+    - name: Bug_Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -556,8 +556,8 @@ ScriptedImporter:
         y: 0
         width: 16
         height: 11
-      spriteId: 12a49f96121f62249a588dc48802531e
-    - name: character_enemy_Frame_3
+      spriteId: b97f24448deed1b4594dde7f611a68bb
+    - name: Bug_Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -565,8 +565,8 @@ ScriptedImporter:
         y: 0
         width: 20
         height: 13
-      spriteId: 9b0a589070d00ef41b8c96480a0f1846
-    - name: character_enemy_Frame_4
+      spriteId: 21da93ac898e9394598b369dda3a424a
+    - name: Bug_Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -574,8 +574,8 @@ ScriptedImporter:
         y: 0
         width: 20
         height: 15
-      spriteId: 9462c4487175c9c4c8ef2ab6b8fdac89
-    - name: character_enemy_Frame_5
+      spriteId: edf4d1970bc6e934a8000ac6ea87ac91
+    - name: Bug_Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -583,8 +583,8 @@ ScriptedImporter:
         y: 0
         width: 24
         height: 17
-      spriteId: 6f2034f33a9c50c48ab336d53b386b04
-    - name: character_enemy_Frame_6
+      spriteId: 2b4f51c9ef6b8944fad28675ebef513b
+    - name: Bug_Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -592,8 +592,8 @@ ScriptedImporter:
         y: 0
         width: 25
         height: 16
-      spriteId: 23b5ec9bf3e227e48a7c29cf0845fb69
-    - name: character_enemy_Frame_7
+      spriteId: f46dc09533d282a45887ba1a85fc2e7e
+    - name: Bug_Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -601,8 +601,8 @@ ScriptedImporter:
         y: 0
         width: 24
         height: 13
-      spriteId: a823f274c7f8e4b49800c0bd75608d8d
-    - name: character_enemy_Frame_8
+      spriteId: a25b3b517b73f7e44a8e0c0b3e9cc300
+    - name: Bug_Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -610,8 +610,8 @@ ScriptedImporter:
         y: 0
         width: 20
         height: 15
-      spriteId: 61693183a10ba84419cf9169a04ca375
-    - name: character_enemy_Frame_9
+      spriteId: b55450530b37e884f8fa4db9d8825cce
+    - name: Bug_Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -619,8 +619,8 @@ ScriptedImporter:
         y: 0
         width: 18
         height: 15
-      spriteId: e1f72b6ddb59fb94f8d6e513f4248c45
-    - name: character_enemy_Frame_10
+      spriteId: a67f0093f1ff004418134427f67ab9d6
+    - name: Bug_Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -628,8 +628,8 @@ ScriptedImporter:
         y: 0
         width: 16
         height: 15
-      spriteId: 29d2a3e59d877f54aac8aefc2e12b3ae
-    - name: character_enemy_Frame_11
+      spriteId: c2ece64956c879444b498d68e3d6fa36
+    - name: Bug_Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -637,8 +637,8 @@ ScriptedImporter:
         y: 0
         width: 18
         height: 15
-      spriteId: d14f5a52e836c3245a58b5d0fe4171e4
-    - name: character_enemy_Frame_12
+      spriteId: 6bef525c231ea604db3a902790221786
+    - name: Bug_Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -646,8 +646,8 @@ ScriptedImporter:
         y: 0
         width: 21
         height: 15
-      spriteId: de363d67add121a4981476fe1a92cab0
-    - name: character_enemy_Frame_13
+      spriteId: b1441a50d54d81e4c99059fa3809ad2c
+    - name: Bug_Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -655,8 +655,8 @@ ScriptedImporter:
         y: 0
         width: 18
         height: 15
-      spriteId: 508c0121b7342b649a9d791da2f329fd
-    - name: character_enemy_Frame_14
+      spriteId: 09ab587a0414eab4ba5960052a8b9213
+    - name: Bug_Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -664,8 +664,8 @@ ScriptedImporter:
         y: 0
         width: 19
         height: 13
-      spriteId: 5844f92261cf67c45bbf394138358423
-    - name: character_enemy_Frame_15
+      spriteId: 2c7bfd9f2896d4f4f80814c6d4a05f06
+    - name: Bug_Frame_15
       frameIndex: 15
       additiveSortOrder: 0
       cellRect:
@@ -673,8 +673,8 @@ ScriptedImporter:
         y: 0
         width: 20
         height: 15
-      spriteId: ae0dc8a6a38005d4cac838265afa8f8e
-    - name: character_enemy_Frame_16
+      spriteId: 50f17260f3469d54e94f60a365a08fb6
+    - name: Bug_Frame_16
       frameIndex: 16
       additiveSortOrder: 0
       cellRect:
@@ -682,8 +682,8 @@ ScriptedImporter:
         y: 0
         width: 20
         height: 14
-      spriteId: aae8d845671550c4794502a3845ee8be
-    - name: character_enemy_Frame_17
+      spriteId: f05a951ba18f4854087169743bd5acd9
+    - name: Bug_Frame_17
       frameIndex: 17
       additiveSortOrder: 0
       cellRect:
@@ -691,8 +691,8 @@ ScriptedImporter:
         y: 1
         width: 11
         height: 17
-      spriteId: c6c71a6eb4f09db49bd68efd8c16b8d3
-    - name: character_enemy_Frame_18
+      spriteId: e8cbc467c90535c43bf2d571b3edd8a2
+    - name: Bug_Frame_18
       frameIndex: 18
       additiveSortOrder: 0
       cellRect:
@@ -700,8 +700,8 @@ ScriptedImporter:
         y: 0
         width: 20
         height: 11
-      spriteId: b98a86e1b0e134141b02655f24d64ce0
-    - name: character_enemy_Frame_19
+      spriteId: 2a6a8f5933666414c87a9203ab13321f
+    - name: Bug_Frame_19
       frameIndex: 19
       additiveSortOrder: 0
       cellRect:
@@ -709,7 +709,7 @@ ScriptedImporter:
         y: 0
         width: 22
         height: 10
-      spriteId: de7f7e33bcef2554faabe31931e01dfc
+      spriteId: 277976a5cdc7a734f9a8b22d7bb4bba1
     linkedCells: []
     parentIndex: -1
   platformSettings:
