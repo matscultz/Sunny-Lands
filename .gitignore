@@ -9,6 +9,7 @@ MCproject/[Bb]uild/
 MCproject/[Bb]uilds/
 MCproject/[Ll]ogs/
 MCproject/[Uu]ser[Ss]ettings/
+MCproject/Packages/*
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
