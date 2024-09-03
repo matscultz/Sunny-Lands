@@ -18,10 +18,10 @@ TagManager:
   - Collectibles
   - Traps
   - Player
-  - 
-  - 
-  - 
-  - 
+  - Foreground
+  - Interactive
+  - Sfondo
+  - Background
   - 
   - 
   - 
@@ -59,6 +59,12 @@ TagManager:
   - name: Collectibles
     uniqueID: 1996744589
     locked: 0
+  - name: Interactive
+    uniqueID: 3017972741
+    locked: 0
   - name: Traps
     uniqueID: 1926574449
+    locked: 0
+  - name: Foreground
+    uniqueID: 3177567679
     locked: 0
