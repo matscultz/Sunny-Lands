@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d704c5263c591424992750345c2519f4
+guid: 071c041567380624aad572de3cec5296
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Setting menu_0
+      name: Setting menu 1_0
       rect:
         serializedVersion: 2
-        x: 6
+        x: 130
         y: 6
-        width: 123
-        height: 134
+        width: 121
+        height: 133
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3add4dedd489ec439ebb60a7aea7f93
-      internalID: 1478277222
+      spriteID: 2ea988bad884420478b25eef068a6950
+      internalID: -1450652292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Setting menu_1
+      name: Setting menu 1_1
       rect:
         serializedVersion: 2
-        x: 135
+        x: 6
         y: 4
-        width: 117
-        height: 136
+        width: 120
+        height: 135
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38a07dfa80b235e4ba0d3dd5915be648
-      internalID: -551786319
+      spriteID: 9f1ec42aa79f8244bb0d85a21f4aed8f
+      internalID: -1422659527
       vertices: []
       indices: 
       edges: []
@@ -175,8 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Setting menu_0: 1478277222
-      Setting menu_1: -551786319
+      Setting menu 1_0: -1450652292
+      Setting menu 1_1: -1422659527
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
