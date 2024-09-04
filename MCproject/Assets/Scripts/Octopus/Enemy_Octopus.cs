@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Octopus : MonoBehaviour
+public class Enemy_Octopus : MonoBehaviour, IDamageable
 {
     public float detectionRadius = 5f;
     public GameObject projectilePrefab;
@@ -13,6 +13,11 @@ public class Enemy_Octopus : MonoBehaviour
     public Transform attackPointB;
     public LayerMask enemyLayers;
     [SerializeField] public float areaWidth = 1f;
+    public float deadAnimation = 1f;
+    public int maxHealth = 1;
+
+    private int currentHealth;
+    private Rigidbody2D rb;
     private float fireCooldown;
     private void Update()
     {
@@ -28,6 +33,7 @@ public class Enemy_Octopus : MonoBehaviour
             {
                 if (player.CompareTag("Player"))
                 {
+                    animator.SetBool("isAttack", true);
                     FireProjectile();
                     fireCooldown = fireRate;
                     break;
@@ -42,7 +48,7 @@ public class Enemy_Octopus : MonoBehaviour
 
     private void FireProjectile()
     {
-        animator.SetBool("isAttack", true);
+        
         Instantiate(projectilePrefab, shootingPoint.position, Quaternion.identity);
     }
 
@@ -60,4 +66,42 @@ public class Enemy_Octopus : MonoBehaviour
     {
         areaWidth = newWidth;
     }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        // Se il nemico subisce danno e la salute scende a 0 o meno, muore
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Debug.Log("Enemy died :(");
+        animator.SetBool("isDead", true); // Attiva l'animazione di morte
+        
+        // Disabilita il collider per evitare ulteriori interazioni
+        GetComponent<Collider2D>().enabled = false;
+
+        
+
+        // Disabilita questo script per evitare ulteriori aggiornamenti
+        this.enabled = false;
+
+        // Avvia la coroutine per disabilitare il GameObject dopo l'animazione di morte
+        StartCoroutine(DisableAfterDeathAnimation());
+    }
+
+    IEnumerator DisableAfterDeathAnimation()
+    {
+        // Aspetta la durata dell'animazione di morte
+        yield return new WaitForSeconds(deadAnimation);
+
+        // Disabilita il GameObject dopo l'animazione
+        gameObject.SetActive(false);
+    }
 }
+

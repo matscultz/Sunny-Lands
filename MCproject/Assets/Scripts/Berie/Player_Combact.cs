@@ -10,12 +10,14 @@ public class Player_Combact : MonoBehaviour
     public LayerMask enemyLayers;
     public int attackDamage = 1;
     [SerializeField] public float areaWidth = 1f;
+    private Rigidbody2D _rigidbody;
     private float attackCooldown; // Tempo di cooldown tra gli attacchi
     private float lastAttackTime = -Mathf.Infinity; // Tempo dell'ultimo attacco
     public string attackAnimationName = "Attack"; // Nome del trigger dell'animazione di attacco
 
     void Start()
     {
+        _rigidbody = GetComponent<Rigidbody2D>();
         // Calcola la durata dell'animazione di attacco
         AnimatorClipInfo[] clipInfo = animator.GetCurrentAnimatorClipInfo(0);
         if (clipInfo.Length > 0)
@@ -34,6 +36,8 @@ public class Player_Combact : MonoBehaviour
         {
             TryAttack();
         }
+
+
     }
 
     void TryAttack()
@@ -56,8 +60,11 @@ public class Player_Combact : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            Debug.Log("We hit " + enemy.name);
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            var damageable = enemy.GetComponent<IDamageable>();
+            if (damageable != null)
+            {
+                damageable.TakeDamage(attackDamage);
+            }
         }
     }
 

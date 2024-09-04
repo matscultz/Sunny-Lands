@@ -103,7 +103,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 686324819486530914, guid: d077fafbd05c92d4d8bd8b31085f736a, type: 3}
       propertyPath: m_Name
-      value: character_enemy_octopus_dx Variant
+      value: character_enemy_octopus_dx
       objectReference: {fileID: 0}
     - target: {fileID: 686324819486530914, guid: d077fafbd05c92d4d8bd8b31085f736a, type: 3}
       propertyPath: m_Layer
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRadius: 5
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 7341487415159375287, guid: 35b687c60373a814a93463ea58a5b28c, type: 3}
   shootingPoint: {fileID: 6038549462598348368}
   fireRate: 2
   animator: {fileID: 6637334775700739755}
