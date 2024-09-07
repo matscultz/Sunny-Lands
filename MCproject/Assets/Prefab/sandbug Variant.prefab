@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4120013299763348334, guid: ff06a6abe2d20a240b712609636d7c74, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.6077795
+      value: -1.86
       objectReference: {fileID: 0}
     - target: {fileID: 4120013299763348334, guid: ff06a6abe2d20a240b712609636d7c74, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.001
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 4120013299763348334, guid: ff06a6abe2d20a240b712609636d7c74, type: 3}
       propertyPath: m_LocalPosition.z
@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8428798346439408242, guid: ff06a6abe2d20a240b712609636d7c74, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8428798346439408242, guid: ff06a6abe2d20a240b712609636d7c74, type: 3}
       propertyPath: m_SortingLayerID
@@ -95,7 +95,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5155799492173230411}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -113,7 +113,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!61 &3300335362049133498
 BoxCollider2D:
   m_ObjectHideFlags: 0

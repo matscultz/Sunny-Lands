@@ -42,6 +42,7 @@ public class Player_Movements : MonoBehaviour
 
     void Update()
     {
+       // Debug.Log(_rigidbody.velocity.y);
         // Input di movimento
         var movement_x = Input.GetAxisRaw("Horizontal");
         FixedUpdate();
@@ -78,8 +79,13 @@ public class Player_Movements : MonoBehaviour
         {
             animator.SetBool("isFall", true);
             animator.SetBool("isJump", false);
+           // LayerMask trapLayer = LayerMask.GetMask("Traps");
             // Controlla se il personaggio sta colpendo un nemico
             Collider2D hit = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, enemyLayer);
+            Collider2D hitBomb = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, LayerMask.GetMask("Traps"));
+            /*Debug.Log("E' la bomba: "+ hitBomb.gameObject.name.Equals("trap_bomb"));
+            Debug.Log("Il nome e': " + hitBomb.gameObject.name);
+            Debug.Log("Il layer e':" +hitBomb.gameObject.layer);*/
             if (hit != null && hit.CompareTag("Enemy"))
             {
                 // Ottieni il componente EnemyController e chiama TakeDamage
@@ -97,6 +103,17 @@ public class Player_Movements : MonoBehaviour
             {
                 animator.SetBool("isFall", false);
             }
+            try
+            {
+                if (hitBomb.gameObject.name.Equals("trap_bomb"))
+                {
+                    hitBomb.gameObject.GetComponent<Trap_Bomb>().StarExplosion();
+
+                }
+            }
+            catch { }
+
+
         }
 
         if (_rigidbody.velocity.y > 0)
@@ -139,6 +156,15 @@ public class Player_Movements : MonoBehaviour
         {
             // Verifica se l'area di rilevamento colpisce il layer del terreno
             Collider2D groundInfo = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, groundLayer);
+            if (groundInfo == null)
+            {
+                Collider2D specialInfo = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, LayerMask.GetMask("Traps"));
+                if (specialInfo != null && specialInfo.CompareTag("Bomb"))
+                {
+                    return true;
+                }
+            }
+
             return groundInfo != null;
         }
     }
@@ -151,13 +177,6 @@ public class Player_Movements : MonoBehaviour
         Gizmos.DrawWireCube(upCheck.position, upCheckSize);
     }
 
-    private void ApplyKnockback(Vector2 direction, int force)
-    {
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            rb.AddForce(direction * knockbackForce * force);
-        }
-    }
+    
 }
 

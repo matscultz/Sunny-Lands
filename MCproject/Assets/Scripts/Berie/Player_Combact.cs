@@ -57,15 +57,29 @@ public class Player_Combact : MonoBehaviour
         Vector2 max = new Vector2(Mathf.Max(attackPointA.position.x, attackPointB.position.x), Mathf.Max(attackPointA.position.y, attackPointB.position.y));
 
         Collider2D[] hitEnemies = Physics2D.OverlapAreaAll(min, max, enemyLayers);
-
+        
         foreach (Collider2D enemy in hitEnemies)
         {
+            Debug.Log("Nome nemico"+enemy.name);
+        }
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            Debug.Log("Nome nemico" + enemy.name);
             var damageable = enemy.GetComponent<IDamageable>();
             if (damageable != null)
             {
                 damageable.TakeDamage(attackDamage);
             }
         }
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            Debug.Log("Nome nemico" + enemy.name);
+            if (enemy.gameObject.name.Equals("trap_bomb"))
+            {
+                enemy.gameObject.GetComponent<Trap_Bomb>().StarExplosion();
+            }
+        }
+
     }
 
     void OnDrawGizmosSelected()

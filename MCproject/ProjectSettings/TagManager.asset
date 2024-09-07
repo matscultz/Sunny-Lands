@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Trap
   - Background
+  - Bomb
+  - Destructibles
   layers:
   - Default
   - TransparentFX
@@ -62,4 +64,7 @@ TagManager:
     locked: 0
   - name: Traps
     uniqueID: 1926574449
+    locked: 0
+  - name: Destructibles
+    uniqueID: 2266598725
     locked: 0
