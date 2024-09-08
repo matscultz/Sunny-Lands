@@ -24,5 +24,6 @@ public class LevelMenu : MonoBehaviour
     {
         string levelName = "Livello" + levelId;
         SceneManager.LoadScene(levelName);
+        MusicManager.Instance.PlayMusic("Level");
     }
 }
