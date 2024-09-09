@@ -8,6 +8,5 @@ public interface ICollectible
     public void Collect()
     {
         Debug.Log("Coin collected!");
-      //  UnityEngine.Object.Destroy(gameObject);
     }
 }
