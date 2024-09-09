@@ -7,8 +7,8 @@ public class Stalactite_up_left : MonoBehaviour
     public LayerMask playerLayer;
     public int damage = 3;
     public Animator animator;
-    public float groundedAnimation = 1f;
-    public float shakeAnimation = 1f;
+    public float groundedAnimation = 0.5f;
+    public float shakeAnimation = 0.5f;
     private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -32,7 +32,6 @@ public class Stalactite_up_left : MonoBehaviour
 
    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Trigger entered with: " + collision.gameObject.name);
         if (collision.CompareTag("Player"))
         {
             animator.SetBool("isDetected", true);
