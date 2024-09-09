@@ -58,26 +58,37 @@ public class Player_Combact : MonoBehaviour
 
         Collider2D[] hitEnemies = Physics2D.OverlapAreaAll(min, max, enemyLayers);
         
+        
         foreach (Collider2D enemy in hitEnemies)
         {
-            Debug.Log("Nome nemico"+enemy.name);
-        }
-        foreach (Collider2D enemy in hitEnemies)
-        {
+            string name = enemy.name;
             Debug.Log("Nome nemico" + enemy.name);
             var damageable = enemy.GetComponent<IDamageable>();
+            
             if (damageable != null)
             {
                 damageable.TakeDamage(attackDamage);
             }
-        }
-        foreach (Collider2D enemy in hitEnemies)
-        {
-            Debug.Log("Nome nemico" + enemy.name);
+
             if (enemy.gameObject.name.Equals("trap_bomb"))
             {
                 enemy.gameObject.GetComponent<Trap_Bomb>().StarExplosion();
             }
+
+            if (enemy.gameObject.name.StartsWith("Barrel"))
+            {
+                switch (name)
+                {
+                    case "Barrel_heavy":
+                        enemy.gameObject.GetComponent<Barrel_Heavy>().HitDestroy();
+                        break;
+                    case "Barrel_light":
+                        enemy.gameObject.GetComponent<Barrel_Light>().HitDestroy();
+                        break;
+                }
+                
+            }
+
         }
 
     }

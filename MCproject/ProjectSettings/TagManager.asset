@@ -10,6 +10,10 @@ TagManager:
   - Background
   - Bomb
   - Destructibles
+  - Chest
+  - Coin
+  - Barrel
+  - AttackZone
   layers:
   - Default
   - TransparentFX
@@ -22,7 +26,7 @@ TagManager:
   - Traps
   - Player
   - Background
-  - 
+  - Coin
   - 
   - 
   - 

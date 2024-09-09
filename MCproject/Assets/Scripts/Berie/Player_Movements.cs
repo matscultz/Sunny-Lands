@@ -42,7 +42,6 @@ public class Player_Movements : MonoBehaviour
 
     void Update()
     {
-       // Debug.Log(_rigidbody.velocity.y);
         // Input di movimento
         var movement_x = Input.GetAxisRaw("Horizontal");
         FixedUpdate();
@@ -83,9 +82,7 @@ public class Player_Movements : MonoBehaviour
             // Controlla se il personaggio sta colpendo un nemico
             Collider2D hit = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, enemyLayer);
             Collider2D hitBomb = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, LayerMask.GetMask("Traps"));
-            /*Debug.Log("E' la bomba: "+ hitBomb.gameObject.name.Equals("trap_bomb"));
-            Debug.Log("Il nome e': " + hitBomb.gameObject.name);
-            Debug.Log("Il layer e':" +hitBomb.gameObject.layer);*/
+           
             if (hit != null && hit.CompareTag("Enemy"))
             {
                 // Ottieni il componente EnemyController e chiama TakeDamage
@@ -96,7 +93,6 @@ public class Player_Movements : MonoBehaviour
 
                     // Rimbalza dopo aver colpito il nemico
                     _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce / 2);
-                    Debug.Log("Collided with: " + hit.gameObject.name + " on layer: " + LayerMask.LayerToName(hit.gameObject.layer));
                 }
             }
             else if (_rigidbody.velocity.y == 0 || onGround)
@@ -131,7 +127,6 @@ public class Player_Movements : MonoBehaviour
 
                     // Rimbalza dopo aver colpito il nemico
                     _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, -knockbackForce);
-                    Debug.Log("Collided with: " + hit.gameObject.name + " on layer: " + LayerMask.LayerToName(hit.gameObject.layer));
                 }
             }
         }
@@ -158,8 +153,13 @@ public class Player_Movements : MonoBehaviour
             Collider2D groundInfo = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, groundLayer);
             if (groundInfo == null)
             {
+                Collider2D chestInfo = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, LayerMask.GetMask("Collectibles"));
                 Collider2D specialInfo = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, LayerMask.GetMask("Traps"));
                 if (specialInfo != null && specialInfo.CompareTag("Bomb"))
+                {
+                    return true;
+                }
+                if(chestInfo != null && chestInfo.CompareTag("Chest"))
                 {
                     return true;
                 }

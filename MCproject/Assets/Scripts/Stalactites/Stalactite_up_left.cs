@@ -32,7 +32,6 @@ public class Stalactite_up_left : MonoBehaviour
 
    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Trigger entered with: " + collision.gameObject.name);
         if (collision.CompareTag("Player"))
         {
             animator.SetBool("isDetected", true);
