@@ -5,9 +5,9 @@ using UnityEngine;
 public class Barrel_Heavy : MonoBehaviour
 {
     public int maxBounces = 5;            // Numero massimo di rimbalzi prima della distruzione
-    public float bounceForce = 10f;       // La forza con cui il player rimbalza
+    public float bounceForce = 5f;       // La forza con cui il player rimbalza
     public float durataAnimazione = 0.5f;
-    private int bounceCount = 0;          // Contatore per i rimbalzi
+    public int bounceCount = 0;          // Contatore per i rimbalzi
     private Animator animator;            // Riferimento all'animator dell'oggetto
     private bool isDestroyed = false;     // Stato di distruzione
 

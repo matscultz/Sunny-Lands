@@ -64,6 +64,7 @@ public class Player_Movements : MonoBehaviour
         if (IsGrounded())
         {
             jumpTime = 0;
+            animator.SetBool("isFall", false);
         }
         if (Input.GetButtonDown("Jump") && (onGround || jumpTime < 1))
         {

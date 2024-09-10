@@ -1,16 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Player_Health : MonoBehaviour
 {
-    public int health = 100;
+    public int health;
     public float deadAnimation = 1f;
     public Animator animator;
     public string hitAnimationName = "Hit"; // Nome del trigger dell'animazione di attacco
     public Cinemachine.CinemachineVirtualCamera cinemachineCamera;
     public bool isImmune = false; // Stato dell'immunita'
     public float immuneDuration = 1f; // Durata dell'immunità
+    public Text healText;
+    private void Start()
+    {
+        health = 100;
+        healText.text = "Health:" + health;
+    }
 
     private void Update()
     {
@@ -22,7 +28,7 @@ public class Player_Health : MonoBehaviour
         {
             animator.SetTrigger(hitAnimationName); // Trigger animazione colpo subito
             health -= damage;
-
+            UpdateHealthUI();
             if (health <= 0)
             {
                 Die();
@@ -61,5 +67,16 @@ public class Player_Health : MonoBehaviour
 
         // Disattiva l'immunità
         isImmune = false;
+    }
+
+    public void Heal(int amount)
+    {
+        health += amount;
+        UpdateHealthUI();
+        
+    }
+    void UpdateHealthUI()
+    {
+        healText.text = "Health: " + health;
     }
 }

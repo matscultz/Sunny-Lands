@@ -159,7 +159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2593836169687072374, guid: d077fafbd05c92d4d8bd8b31085f736a, type: 3}
       propertyPath: m_SortingLayerID
-      value: -1705965041
+      value: 168642211
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -256,7 +256,7 @@ MonoBehaviour:
   detectionRadius: 5
   projectilePrefab: {fileID: 3467410837780828467, guid: 540c506b24091464bae662bbde5f1140, type: 3}
   shootingPoint: {fileID: 7027770387103192460}
-  fireRate: 2
+  fireRate: 1.5
   animator: {fileID: 3929004622441079831}
   attackPointA: {fileID: 6388607693292305836}
   attackPointB: {fileID: 8833011994906613247}

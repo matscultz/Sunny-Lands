@@ -57,8 +57,8 @@ public class Player_Combact : MonoBehaviour
         Vector2 max = new Vector2(Mathf.Max(attackPointA.position.x, attackPointB.position.x), Mathf.Max(attackPointA.position.y, attackPointB.position.y));
 
         Collider2D[] hitEnemies = Physics2D.OverlapAreaAll(min, max, enemyLayers);
-        
-        
+        Collider2D[] hitBarrels = Physics2D.OverlapAreaAll(min, max, LayerMask.NameToLayer("Barrel"));
+
         foreach (Collider2D enemy in hitEnemies)
         {
             string name = enemy.name;
@@ -75,20 +75,24 @@ public class Player_Combact : MonoBehaviour
                 enemy.gameObject.GetComponent<Trap_Bomb>().StarExplosion();
             }
 
-            if (enemy.gameObject.name.StartsWith("Barrel"))
+            
+
+        }
+        foreach(Collider2D barrel in hitBarrels)
+        {
+            if (barrel.gameObject.name.StartsWith("Barrel"))
             {
                 switch (name)
                 {
                     case "Barrel_heavy":
-                        enemy.gameObject.GetComponent<Barrel_Heavy>().HitDestroy();
+                        barrel.gameObject.GetComponent<Barrel_Heavy>().HitDestroy();
                         break;
                     case "Barrel_light":
-                        enemy.gameObject.GetComponent<Barrel_Light>().HitDestroy();
+                        barrel.gameObject.GetComponent<Barrel_Light>().HitDestroy();
                         break;
                 }
-                
-            }
 
+            }
         }
 
     }

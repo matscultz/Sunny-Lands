@@ -12,6 +12,7 @@ public class Coin_silver : MonoBehaviour
         // Controlla se l'oggetto che è entrato nel trigger è il player
         if (collider.CompareTag("Player"))
         {
+            
             // Raccogli la moneta (qui puoi aumentare il punteggio o fare altro)
             CollectCoin(collider);
         }
@@ -20,6 +21,7 @@ public class Coin_silver : MonoBehaviour
     // Funzione per gestire la raccolta della moneta
     void CollectCoin(Collider2D collider)
     {
+        
 
         collider.gameObject.GetComponent<Player_Precius>().AddCoin(coinValue);
         // Distruggi la moneta una volta raccolta
