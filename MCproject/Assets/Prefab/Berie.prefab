@@ -526,9 +526,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1335613989763178125, guid: 820a410efaedac44b905185b587c5e1b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7928290070192672998}
-    - targetCorrespondingSourceObject: {fileID: 1335613989763178125, guid: 820a410efaedac44b905185b587c5e1b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6406095757330607548}
   m_SourcePrefab: {fileID: 100100000, guid: 820a410efaedac44b905185b587c5e1b, type: 3}
 --- !u!95 &4180180913019573514 stripped
 Animator:
@@ -649,7 +646,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.066011906, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -660,7 +657,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.90625, y: 1.0625}
+  m_Size: {x: 1.0382738, y: 1.0625}
   m_EdgeRadius: 0
 --- !u!114 &333016272700670243
 MonoBehaviour:
@@ -692,6 +689,9 @@ MonoBehaviour:
     m_Bits: 64
   knockbackForce: 1
   attackDamage: 1
+  leftButton: {fileID: 0}
+  rightButton: {fileID: 0}
+  jumpButton: {fileID: 0}
 --- !u!114 &6120094243962077134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -710,9 +710,13 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 320
+  barrelLayers:
+    serializedVersion: 2
+    m_Bits: 32768
   attackDamage: 1
   areaWidth: 0.35
   attackAnimationName: Attack
+  attackButton: {fileID: 0}
 --- !u!114 &8629619793824489529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -747,6 +751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coin: 0
   scoreText: {fileID: 0}
+  interactButton: {fileID: 0}
 --- !u!114 &8315359604054812349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,19 +776,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c2ef30cc89cf24c98ed707ab73fa36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6406095757330607548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5972073431096805097}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54413677d547d4040af15c42b784eedc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cinemachineCam: {fileID: 3640708841427197817}
-  screenXRight: 0.15
-  screenXLeft: 0.8
-  isFacingRight: 1

@@ -29,10 +29,6 @@ public class Trap_Bomb : MonoBehaviour
         isExplode = false;
         hasBounced = false;  // Inizialmente il rimbalzo non è avvenuto
         rb = GetComponent<Rigidbody2D>();
-        Debug.Log("Animator: " + animator);
-        Debug.Log("Rigidbody2D: " + rb);
-        Debug.Log("Explosion Collider: " + explosionCollider);
-        Debug.Log("Box Collider2D: " + boxCollider2D);
     }
 
     // Update is called once per frame

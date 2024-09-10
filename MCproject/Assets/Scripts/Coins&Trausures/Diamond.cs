@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Diamond : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Transform playerTransform;  // Riferimento al player
+    public Vector3 offset;  // Offset della posizione della moneta rispetto al player
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        // Aggiorna la posizione della moneta per farla seguire il player
+        transform.position = playerTransform.position + offset;
     }
 }

@@ -8,6 +8,7 @@ public class Player_Precius : MonoBehaviour
     public static Player_Precius instance;
     public int coin = 0;
     public Text scoreText;
+    public Button interactButton;
     private bool nearChest = false;
     private Treasure_Chest_Default chest;
     private Animator animator;
@@ -15,6 +16,7 @@ public class Player_Precius : MonoBehaviour
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
+        interactButton.onClick.AddListener(Interact);
     }
 
     // Update is called once per frame
@@ -63,4 +65,12 @@ public class Player_Precius : MonoBehaviour
     {
         animator.SetTrigger("SpecialTreasure");
     }
+
+    void Interact()
+    {
+        if (nearChest)
+        {
+            chest.OpenChest();
+        }
+    } 
 }

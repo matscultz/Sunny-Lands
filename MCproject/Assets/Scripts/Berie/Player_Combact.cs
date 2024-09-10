@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Combact : MonoBehaviour
 {
@@ -8,12 +9,14 @@ public class Player_Combact : MonoBehaviour
     public Transform attackPointA;
     public Transform attackPointB;
     public LayerMask enemyLayers;
+    public LayerMask barrelLayers;
     public int attackDamage = 1;
     [SerializeField] public float areaWidth = 1f;
     private Rigidbody2D _rigidbody;
     private float attackCooldown; // Tempo di cooldown tra gli attacchi
     private float lastAttackTime = -Mathf.Infinity; // Tempo dell'ultimo attacco
     public string attackAnimationName = "Attack"; // Nome del trigger dell'animazione di attacco
+    public Button attackButton;
 
     void Start()
     {
@@ -28,6 +31,7 @@ public class Player_Combact : MonoBehaviour
         {
             Debug.LogWarning("Animazione di attacco non trovata.");
         }
+        attackButton.onClick.AddListener(TryAttack);
     }
     // Update is called once per frame
     void Update()
@@ -57,7 +61,7 @@ public class Player_Combact : MonoBehaviour
         Vector2 max = new Vector2(Mathf.Max(attackPointA.position.x, attackPointB.position.x), Mathf.Max(attackPointA.position.y, attackPointB.position.y));
 
         Collider2D[] hitEnemies = Physics2D.OverlapAreaAll(min, max, enemyLayers);
-        Collider2D[] hitBarrels = Physics2D.OverlapAreaAll(min, max, LayerMask.NameToLayer("Barrel"));
+        Collider2D[] hitBarrels = Physics2D.OverlapAreaAll(min, max, barrelLayers);
 
         foreach (Collider2D enemy in hitEnemies)
         {
@@ -75,25 +79,22 @@ public class Player_Combact : MonoBehaviour
                 enemy.gameObject.GetComponent<Trap_Bomb>().StarExplosion();
             }
 
-            
-
         }
         foreach(Collider2D barrel in hitBarrels)
         {
-            if (barrel.gameObject.name.StartsWith("Barrel"))
-            {
-                switch (name)
+            
+                if (barrel.gameObject.name.Equals("Barrel_heavy"))
                 {
-                    case "Barrel_heavy":
-                        barrel.gameObject.GetComponent<Barrel_Heavy>().HitDestroy();
-                        break;
-                    case "Barrel_light":
-                        barrel.gameObject.GetComponent<Barrel_Light>().HitDestroy();
-                        break;
+                    barrel.gameObject.GetComponent<Barrel_Heavy>().HitDestroy();
+
+                }
+                if (barrel.gameObject.name.Equals("Barrel_light"))
+                {
+                    barrel.gameObject.GetComponent<Barrel_Light>().HitDestroy();
                 }
 
-            }
         }
+        
 
     }
 

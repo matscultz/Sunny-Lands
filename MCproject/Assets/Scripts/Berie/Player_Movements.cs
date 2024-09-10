@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
-
+using UnityEngine.UI;
 public class Player_Movements : MonoBehaviour
 {
     public float movVel = 1f;
@@ -19,6 +19,9 @@ public class Player_Movements : MonoBehaviour
     public LayerMask enemyLayer;
     public float knockbackForce = 5f;
     public int attackDamage = 0;
+    public MoveButton leftButton;
+    public MoveButton rightButton;
+    public Button jumpButton;
 
     private CinemachineFramingTransposer framingTransposer;
     private Rigidbody2D _rigidbody;
@@ -26,28 +29,39 @@ public class Player_Movements : MonoBehaviour
     private bool rightFace = true;
     private bool onGround;
 
-    private BoxCollider2D boxCollider2D;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
-        boxCollider2D = GetComponent<BoxCollider2D>();
         scale = transform.localScale.x;
+        
         if (virtualCamera != null)
         {
             framingTransposer = virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
         }
+        jumpTime = 0;
+        jumpButton.onClick.AddListener(Jump);
     }
 
     void Update()
     {
-        // Input di movimento
-        var movement_x = Input.GetAxisRaw("Horizontal");
-        FixedUpdate();
-        // Animazione di corsa
-        animator.SetFloat("Speed", Mathf.Abs(movement_x));
-
+        float movement_x = 0f;
+        Debug.Log("Velocita' X: " + movement_x);
+        if (leftButton.isPressed)
+        {
+            movement_x = -1f;
+        }
+        else if ((rightButton.isPressed))
+        {
+            movement_x = 1f;
+        }
+        else
+        {
+            movement_x = Input.GetAxisRaw("Horizontal"); // Controllo anche da tastiera
+        }
+        _rigidbody.velocity = new Vector2(movement_x * movVel, _rigidbody.velocity.y);
+        animator.SetFloat("Speed", movement_x);
         // Flip dello sprite
         if (movement_x < 0 && rightFace)
         {
@@ -61,17 +75,16 @@ public class Player_Movements : MonoBehaviour
         // Animazione di salto
         onGround = IsGrounded();
         animator.SetBool("onGround", onGround);
+
         if (IsGrounded())
         {
             jumpTime = 0;
             animator.SetBool("isFall", false);
         }
-        if (Input.GetButtonDown("Jump") && (onGround || jumpTime < 1))
+
+        if (Input.GetButtonDown("Jump"))
         {
-            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
-            animator.SetBool("isJump", true);
-            jumpTime += 1;
-            onGround = false; // Impedisce ulteriori reset del conteggio dei salti finché non si tocca terra
+            Jump();
         }
 
         // Animazione di caduta
@@ -79,7 +92,6 @@ public class Player_Movements : MonoBehaviour
         {
             animator.SetBool("isFall", true);
             animator.SetBool("isJump", false);
-           // LayerMask trapLayer = LayerMask.GetMask("Traps");
             // Controlla se il personaggio sta colpendo un nemico
             Collider2D hit = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, enemyLayer);
             Collider2D hitBomb = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, LayerMask.GetMask("Traps"));
@@ -115,7 +127,8 @@ public class Player_Movements : MonoBehaviour
 
         if (_rigidbody.velocity.y > 0)
         {
-
+            animator.SetBool("isJump", true);
+            animator.SetBool("isFall", false);
             // Controlla se il personaggio sta colpendo un nemico
             Collider2D hit = Physics2D.OverlapBox(upCheck.position, upCheckSize, 0f, enemyLayer);
             if (hit != null && hit.CompareTag("Enemy"))
@@ -132,12 +145,6 @@ public class Player_Movements : MonoBehaviour
             }
         }
 
-        void FixedUpdate()
-        {
-            // Movimento del personaggio
-            var movement_x = Input.GetAxisRaw("Horizontal");
-            _rigidbody.velocity = new Vector2(movement_x * movVel, _rigidbody.velocity.y);
-        }
 
         void Flip()
         {
@@ -178,6 +185,16 @@ public class Player_Movements : MonoBehaviour
         Gizmos.DrawWireCube(upCheck.position, upCheckSize);
     }
 
-    
+
+    void Jump()
+    {
+        if (onGround || jumpTime < 1) // Permetti di saltare se è a terra o se ha fatto meno di 2 salti
+        {
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
+            jumpTime++; // Incrementa il contatore dei salti
+            onGround = false; // Disabilita ulteriori salti finché non torna a terra
+            
+        }
+    }
 }
 

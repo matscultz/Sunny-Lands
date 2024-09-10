@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Treasure_Chest_Default : MonoBehaviour
 {
-    
+
     public GameObject coinPrefab;  // Prefab della moneta
     public Transform coinSpawnPoint;  // Il punto da cui spawnano le monete
     public int numCoins = 10;  // Numero di monete da spawnare
@@ -38,7 +38,7 @@ public class Treasure_Chest_Default : MonoBehaviour
         player.PlaySpecialAnimation();
         StartCoroutine(SpawnSpecialCoinWithDelay(delay));
 
-        animator.SetBool("isOpen",true);
+        animator.SetBool("isOpen", true);
     }
 
     void SpawnCoin()
@@ -71,8 +71,15 @@ public class Treasure_Chest_Default : MonoBehaviour
         Vector3 spawnPosition = playerTransform.position + specialCoinOffset;
         GameObject specialCoin = Instantiate(specialCoinPrefab, spawnPosition, Quaternion.identity);
 
+        // Imposta il playerTransform e l'offset per la moneta speciale
+        Diamond specialCoinScript = specialCoin.GetComponent<Diamond>();
+        if (specialCoinScript != null)
+        {
+            specialCoinScript.playerTransform = playerTransform;
+            specialCoinScript.offset = specialCoinOffset;
+        }
+
         // Raccogli la moneta immediatamente e avvia l'animazione del player
         CollectSpecialCoin(specialCoin);
-
     }
 }
