@@ -30,50 +30,51 @@ TagManager:
   - Sfondo
   - Background
   - Coin
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Background
-    uniqueID: 1501647847
+    uniqueID: 421104843
     locked: 0
   - name: Ground
-    uniqueID: 2657757363
+    uniqueID: 1300618619
     locked: 0
   - name: Enemy
-    uniqueID: 2589002255
+    uniqueID: 999929427
     locked: 0
   - name: Player
-    uniqueID: 1663609315
+    uniqueID: 863559051
     locked: 0
   - name: Collectibles
-    uniqueID: 1996744589
+    uniqueID: 2449377747
     locked: 0
   - name: Interactive
-    uniqueID: 3017972741
+    uniqueID: 1351710689
     locked: 0
   - name: Traps
-    uniqueID: 1926574449
+    uniqueID: 2606195045
     locked: 0
   - name: Foreground
-    uniqueID: 3177567679
+    uniqueID: 1770587701
+    locked: 0
   - name: Destructibles
-    uniqueID: 2266598725
+    uniqueID: 2943309803
     locked: 0
