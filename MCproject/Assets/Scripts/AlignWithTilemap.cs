@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class NewBehaviourScript : MonoBehaviour
+public class AlignWithTilemap : MonoBehaviour
 {
     public Tilemap tilemap; // Riferimento alla Tilemap
 

@@ -3,7 +3,7 @@ guid: c9c6b502357b4c948bfd436153e8a2c9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,6 +64,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -74,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -86,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -98,91 +103,118 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: character_enemy_octopus_bullet_0
+      name: character_enemy_octopus_bullet_idle_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 48
-        height: 48
+        x: 10
+        y: 20
+        width: 24
+        height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2658cd871df615345a76b382558778b4
-      internalID: 500369879
+      spriteID: e5e241cfebc277947bacdd61eccafd66
+      internalID: 1139104429
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_enemy_octopus_bullet_1
+      name: character_enemy_octopus_bullet_idle_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
-        width: 48
-        height: 48
+        x: 58
+        y: 20
+        width: 24
+        height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fef6dd2602314a944b743fc01d3a8223
-      internalID: 1383500326
+      spriteID: 9fa39c9b1116a974b91170c96f5801a0
+      internalID: -1799023547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_enemy_octopus_bullet_2
+      name: character_enemy_octopus_bullet_idle_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 48
-        height: 48
+        x: 105
+        y: 21
+        width: 25
+        height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f018fdf8acaa9784ebb510ca365aef1b
-      internalID: -1071484244
+      spriteID: f91a6dc9ae8f0aa4393f340549ad800d
+      internalID: -119197142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_enemy_octopus_bullet_3
+      name: character_enemy_octopus_bullet_idle_3
       rect:
         serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 48
+        x: 152
+        y: 21
+        width: 26
+        height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95b9ea84325de2643b2c6a44a62ff278
-      internalID: 1893447251
+      spriteID: 3e5058be5fb25f2408e6ae34936cbb6c
+      internalID: -1178885509
       vertices: []
       indices: 
       edges: []
@@ -198,13 +230,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      character_enemy_octopus_bullet_3: 1893447251
-      character_enemy_octopus_bullet_2: -1071484244
-      character_enemy_octopus_bullet_0: 500369879
-      character_enemy_octopus_bullet_1: 1383500326
-  spritePackingTag: 
+      character_enemy_octopus_bullet_idle_0: 1139104429
+      character_enemy_octopus_bullet_idle_1: -1799023547
+      character_enemy_octopus_bullet_idle_2: -119197142
+      character_enemy_octopus_bullet_idle_3: -1178885509
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

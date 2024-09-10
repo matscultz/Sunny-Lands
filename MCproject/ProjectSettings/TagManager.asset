@@ -8,6 +8,12 @@ TagManager:
   - Enemy
   - Trap
   - Background
+  - Bomb
+  - Destructibles
+  - Chest
+  - Coin
+  - Barrel
+  - AttackZone
   layers:
   - Default
   - TransparentFX
@@ -23,24 +29,24 @@ TagManager:
   - Interactive
   - Sfondo
   - Background
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Coin
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
   m_SortingLayers:
   - name: Default
     uniqueID: 0
@@ -68,4 +74,6 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 3177567679
+  - name: Destructibles
+    uniqueID: 2266598725
     locked: 0
