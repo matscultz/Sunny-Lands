@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
-    private int score = 0;
+    public static GameManager Instance;
 
-    void Awake()
+    private Vector3 lastCheckpointPosition;
+    private Player_Health playerHealth;
+    private Player_Precius playerScore;
+
+    private void Awake()
     {
-        // Assicurati che ci sia solo un'istanza di GameManager
-        if (instance == null)
+        // Singleton
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -20,10 +24,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Metodo per aggiungere punti
-    public void AddScore(int value)
+    private void Start()
     {
-        score += value;
-        Debug.Log("Punteggio: " + score);
+        // Trova gli script del Player
+        playerHealth = FindObjectOfType<Player_Health>();
+        playerScore = FindObjectOfType<Player_Precius>();
+    }
+
+    // Imposta la posizione del checkpoint
+    public void SetCheckpoint(Vector3 checkpointPosition)
+    {
+        lastCheckpointPosition = checkpointPosition;
+    }
+
+    // Ripristina il player alla posizione del checkpoint
+    public void RespawnPlayer()
+    {
+        // Imposta la posizione del player al checkpoint
+        playerHealth.transform.position = lastCheckpointPosition;
+
+        // Ripristina la salute e il punteggio del player
+        playerHealth.ResetHealth();
+        //playerScore.ResetScore(); // Solo se necessario ripristinare il punteggio
     }
 }

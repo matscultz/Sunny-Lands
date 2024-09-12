@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: -4192130825626979787}
   - component: {fileID: 1039027174101098734}
   - component: {fileID: -4956819801538213909}
-  - component: {fileID: 8716971660296422088}
-  m_Layer: 7
+  - component: {fileID: 3469711463640840229}
+  m_Layer: 11
   m_Name: treasure_chest_diamond
   m_TagString: Chest
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2745916007161637564}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -170,7 +170,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.016934633, y: 0}
+  m_Offset: {x: 0.0070209503, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -181,7 +181,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7239718, y: 0.75}
+  m_Size: {x: 1.7437992, y: 0.75}
   m_EdgeRadius: 0
 --- !u!61 &-4956819801538213909
 BoxCollider2D:
@@ -228,7 +228,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0126905, y: 0.75}
   m_EdgeRadius: 0
---- !u!114 &8716971660296422088
+--- !u!114 &3469711463640840229
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,16 +237,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 2745916007161637564}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9ffbaa00d3fd547962a7094d837077, type: 3}
+  m_Script: {fileID: 11500000, guid: 35cf2cdfb1fb99d44921f3386c2370f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPrefab: {fileID: 2356982266596023343, guid: 67099de5cd507e8419f484397f4c9972, type: 3}
   coinSpawnPoint: {fileID: 2201331824415373690}
-  numCoins: 10
-  specialCoinPrefab: {fileID: 3743093973909792062, guid: b6398e5d9fa378e42915077c59786586, type: 3}
+  specialCoinPrefab: {fileID: 3743093973909792062, guid: 2996e7dff47839c459cbfef7f20ab29d, type: 3}
   playerTransform: {fileID: 0}
   specialCoinOffset: {x: 0, y: 0.7, z: 0}
   delay: 0.3
+  coinTypes:
+  - coinPrefab: {fileID: 6507589714795019061, guid: 0416790cb49d0e14f92a9dd39b2b3a31, type: 3}
+    amount: 3
+  - coinPrefab: {fileID: 8035550996084076836, guid: 043cb0ebedf62ee41a84f585c7348162, type: 3}
+    amount: 4
+  - coinPrefab: {fileID: 2356982266596023343, guid: 67099de5cd507e8419f484397f4c9972, type: 3}
+    amount: 3
+  diamondUIManager: {fileID: 0}
 --- !u!1 &6491969851605107890
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2201331824415373690}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +278,7 @@ Transform:
   m_GameObject: {fileID: 6491969851605107890}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.133, z: 0}
+  m_LocalPosition: {x: -0.079, y: 0.423, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

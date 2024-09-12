@@ -27,4 +27,9 @@ public class Coin_silver : MonoBehaviour
         // Distruggi la moneta una volta raccolta
         Destroy(gameObject);
     }
+
+    public int GetCoinValue()
+    {
+        return coinValue;
+    }
 }

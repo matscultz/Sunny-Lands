@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 643483203374613295}
   - component: {fileID: 4569879247504754682}
   - component: {fileID: 7278312089750323132}
-  - component: {fileID: 3372982660562795411}
+  - component: {fileID: 5758251795191589636}
   m_Layer: 11
   m_Name: collectibles_potion_red
   m_TagString: Health
@@ -53,7 +53,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -227,7 +227,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.28125, y: 0.4375}
   m_EdgeRadius: 0
---- !u!114 &3372982660562795411
+--- !u!114 &5758251795191589636
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,6 +237,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f95ba2d910ae8e54f93b1f5a7960b10b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heal_amount: 15
+  m_Name:
+  m_EditorClassIdentifier:
+  heal_amount: 40

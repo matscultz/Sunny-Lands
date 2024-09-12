@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1910146116145039086}
   - component: {fileID: 207707894371299666}
   - component: {fileID: 3899168593403108534}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: collectibles_coin_royal
   m_TagString: Coin
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 2560
+    m_Bits: 19200
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

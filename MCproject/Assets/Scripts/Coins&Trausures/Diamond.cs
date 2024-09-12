@@ -10,6 +10,6 @@ public class Diamond : MonoBehaviour
     private void Update()
     {
         // Aggiorna la posizione della moneta per farla seguire il player
-        transform.position = playerTransform.position + offset;
+        //transform.position = playerTransform.position + offset;
     }
 }

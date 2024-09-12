@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 145609716855682211}
   - component: {fileID: 2747680917057814183}
   - component: {fileID: 2253657712496782585}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: treasure_chest_default
   m_TagString: Chest
   m_Icon: {fileID: 0}
@@ -217,10 +217,10 @@ MonoBehaviour:
   coinPrefab: {fileID: 6507589714795019061, guid: 0416790cb49d0e14f92a9dd39b2b3a31, type: 3}
   coinSpawnPoint: {fileID: 2067469811178635485}
   numCoins: 10
-  specialCoinPrefab: {fileID: 1133418053097199821, guid: 8b5ffaa6f6942f848bf3e93419e8c7c3, type: 3}
+  specialCoinPrefab: {fileID: 2356982266596023343, guid: 806f2b5c38ffdb744bc201af55601435, type: 3}
   playerTransform: {fileID: 0}
   specialCoinOffset: {x: 0, y: 0.7, z: 0}
-  delay: 0.4
+  delay: 0.5
 --- !u!50 &2747680917057814183
 Rigidbody2D:
   serializedVersion: 4
@@ -270,7 +270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2067469811178635485}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: spawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ Transform:
   m_GameObject: {fileID: 8010102768042888442}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.195, z: 0}
+  m_LocalPosition: {x: 0, y: 0.158, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
