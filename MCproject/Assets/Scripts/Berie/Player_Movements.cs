@@ -47,7 +47,6 @@ public class Player_Movements : MonoBehaviour
     void Update()
     {
         float movement_x = 0f;
-        Debug.Log("Velocita' X: " + movement_x);
         if (leftButton.isPressed)
         {
             movement_x = -1f;
@@ -80,6 +79,7 @@ public class Player_Movements : MonoBehaviour
         {
             jumpTime = 0;
             animator.SetBool("isFall", false);
+            animator.SetBool("isJump", false);
         }
 
         if (Input.GetButtonDown("Jump"))
@@ -161,7 +161,7 @@ public class Player_Movements : MonoBehaviour
             Collider2D groundInfo = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, groundLayer);
             if (groundInfo == null)
             {
-                Collider2D chestInfo = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, LayerMask.GetMask("Collectibles"));
+                Collider2D chestInfo = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, LayerMask.GetMask("Interactive"));
                 Collider2D specialInfo = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, LayerMask.GetMask("Traps"));
                 if (specialInfo != null && specialInfo.CompareTag("Bomb"))
                 {

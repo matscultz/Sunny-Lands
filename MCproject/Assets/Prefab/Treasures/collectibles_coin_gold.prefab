@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6226115786083852404}
   - component: {fileID: 6063319674366254345}
   - component: {fileID: 2047868498581575477}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: collectibles_coin_gold
   m_TagString: Coin
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 2560
+    m_Bits: 16896
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -160,7 +160,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

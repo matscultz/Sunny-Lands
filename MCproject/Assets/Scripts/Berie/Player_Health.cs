@@ -12,10 +12,13 @@ public class Player_Health : MonoBehaviour
     public bool isImmune = false; // Stato dell'immunita'
     public float immuneDuration = 1f; // Durata dell'immunità
     public Text healText;
+    private static int maxHealth = 100;
+    private float immuneTemp;
     private void Start()
     {
-        health = 100;
-        healText.text = "Health:" + health;
+        health = maxHealth;
+        healText.text = ""+health;
+        immuneTemp = immuneDuration;
     }
 
     private void Update()
@@ -28,6 +31,8 @@ public class Player_Health : MonoBehaviour
         {
             animator.SetTrigger(hitAnimationName); // Trigger animazione colpo subito
             health -= damage;
+            if (health < 0)
+                health = 0;
             UpdateHealthUI();
             if (health <= 0)
             {
@@ -40,12 +45,14 @@ public class Player_Health : MonoBehaviour
 
     private void Die()
     {
-        GameObject placeholder = new GameObject("Placeholder");
-        placeholder.transform.position = transform.position;
         animator.SetTrigger("Death");
-        // Imposta la camera per seguire l'oggetto vuoto
-        cinemachineCamera.Follow = placeholder.transform;
-        // Avvia la coroutine per disabilitare il GameObject dopo l'animazione di morte
+        immuneDuration = 1.5f;
+        /* GameObject placeholder = new GameObject("Placeholder");
+         placeholder.transform.position = transform.position;
+
+         // Imposta la camera per seguire l'oggetto vuoto
+         cinemachineCamera.Follow = placeholder.transform;
+         // Avvia la coroutine per disabilitare il GameObject dopo l'animazione di morte*/
         StartCoroutine(DisableAfterDeathAnimation());
     }
 
@@ -54,8 +61,14 @@ public class Player_Health : MonoBehaviour
         // Aspetta la durata dell'animazione di morte
         yield return new WaitForSeconds(deadAnimation);
 
-        // Disabilita il GameObject dopo l'animazione
+        // Disabilita il player temporaneamente
         gameObject.SetActive(false);
+
+        // Notifica il GameManager che il player deve rinascere
+        GameManager.Instance.RespawnPlayer();
+
+        // Riabilita il player
+        gameObject.SetActive(true);
     }
 
     IEnumerator ActivateImmunity()
@@ -77,6 +90,14 @@ public class Player_Health : MonoBehaviour
     }
     void UpdateHealthUI()
     {
-        healText.text = "Health: " + health;
+        healText.text = "" + health;
+    }
+
+    public void ResetHealth()
+    {
+        health = maxHealth;
+        UpdateHealthUI();
+        isImmune = false;
+        immuneDuration = immuneTemp;
     }
 }

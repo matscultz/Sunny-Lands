@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Treasure_Chest_Default : MonoBehaviour
+public class Treasure_Chest_Default : MonoBehaviour, IOpenChest
 {
 
     public GameObject coinPrefab;  // Prefab della moneta
@@ -54,12 +54,8 @@ public class Treasure_Chest_Default : MonoBehaviour
 
     void CollectSpecialCoin(GameObject specialCoin)
     {
-
-        // Distruggi la moneta dopo un breve ritardo (così appare per un attimo)
-        Destroy(specialCoin, 1f);
-
         // Aggiorna il punteggio o aggiungi altri comportamenti speciali
-        player.AddCoin(10);  // Punteggio speciale
+        player.AddCoin(specialCoin.GetComponent<Coin_Gold_Chest>().GetCoinValue());  // Punteggio speciale
     }
 
     IEnumerator SpawnSpecialCoinWithDelay(float delay)
@@ -72,11 +68,11 @@ public class Treasure_Chest_Default : MonoBehaviour
         GameObject specialCoin = Instantiate(specialCoinPrefab, spawnPosition, Quaternion.identity);
 
         // Imposta il playerTransform e l'offset per la moneta speciale
-        Diamond specialCoinScript = specialCoin.GetComponent<Diamond>();
+        Follow_Player specialCoinScript = specialCoin.GetComponent<Follow_Player>();
+        //Coin_Gold specialCoinScript = specialCoin.GetComponent<Coin_Gold>();
         if (specialCoinScript != null)
         {
-            specialCoinScript.playerTransform = playerTransform;
-            specialCoinScript.offset = specialCoinOffset;
+            specialCoinScript.Initialize(playerTransform);
         }
 
         // Raccogli la moneta immediatamente e avvia l'animazione del player

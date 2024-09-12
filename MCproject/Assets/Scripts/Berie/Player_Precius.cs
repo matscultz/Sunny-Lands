@@ -9,9 +9,10 @@ public class Player_Precius : MonoBehaviour
     public int coin = 0;
     public Text scoreText;
     public Button interactButton;
+    public DiamondUIManager diamondUIManager;
     private bool nearChest = false;
-    private Treasure_Chest_Default chest;
     private Animator animator;
+    private IOpenChest open;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +23,10 @@ public class Player_Precius : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("animator "+animator != null);
         if (nearChest && Input.GetKeyDown(KeyCode.L))
         {
-            chest.OpenChest();
+            open.OpenChest();
         }
     }
 
@@ -38,7 +40,15 @@ public class Player_Precius : MonoBehaviour
         if (collider.CompareTag("Chest"))
         {
             nearChest = true;
-            chest = collider.GetComponent<Treasure_Chest_Default>();
+
+            open = collider.gameObject.GetComponent<IOpenChest>();
+        }
+
+        if (collider.CompareTag("Diamond"))
+        {
+            diamondUIManager.AddDiamond();
+            PlaySpecialAnimation();
+            Destroy(collider.gameObject);
         }
     }
 
@@ -47,7 +57,7 @@ public class Player_Precius : MonoBehaviour
         if (collider.CompareTag("Chest"))
         {
             nearChest = false;
-            chest = null;
+            open = null;
         }
     }
     public void AddCoin(int value)
@@ -58,7 +68,7 @@ public class Player_Precius : MonoBehaviour
 
     void UpdateScoreUI()
     {
-        scoreText.text = "Coin: " + coin;
+        scoreText.text = "" + coin;
     }
 
     public void PlaySpecialAnimation()
@@ -70,7 +80,14 @@ public class Player_Precius : MonoBehaviour
     {
         if (nearChest)
         {
-            chest.OpenChest();
+            open.OpenChest();
         }
-    } 
+    }
+
+    // Ripristina il punteggio al momento del respawn (se necessario)
+    public void ResetScore()
+    {
+        // Decidi se vuoi resettare il punteggio a 0 o mantenere il valore corrente
+        // score = 0;  // Se desideri azzerare il punteggio
+    }
 }

@@ -15,6 +15,7 @@ TagManager:
   - Barrel
   - AttackZone
   - Health
+  - Diamond
   layers:
   - Default
   - TransparentFX
