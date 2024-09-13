@@ -24,6 +24,7 @@ public class Coin_silver : MonoBehaviour
         
 
         collider.gameObject.GetComponent<Player_Precius>().AddCoin(coinValue);
+        SoundManager.Instance.PlaySound3D("Pickup", transform.position);
         // Distruggi la moneta una volta raccolta
         Destroy(gameObject);
     }

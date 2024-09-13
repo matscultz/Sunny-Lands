@@ -15,13 +15,16 @@ public class Treasure_Chest_Default : MonoBehaviour, IOpenChest
     private Player_Precius player;
     private Animator animator;
     private bool isOpen = false;
+    private GameObject playerFind;
 
     // Start is called before the first frame update
 
     void Start()
     {
+        playerFind = GameObject.FindGameObjectWithTag("Player");
         animator = GetComponent<Animator>();
-        player = playerTransform.GetComponent<Player_Precius>();
+        playerTransform = playerFind.transform;
+        player = playerFind.GetComponent<Player_Precius>();
     }
 
 

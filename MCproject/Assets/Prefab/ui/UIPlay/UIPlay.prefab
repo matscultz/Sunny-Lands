@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 6643795439627647758}
   - component: {fileID: 1003834777829132332}
   m_Layer: 5
-  m_Name: Image
+  m_Name: diamond3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -627,7 +627,7 @@ GameObject:
   - component: {fileID: 8500955370045965015}
   - component: {fileID: 5625769903051243334}
   m_Layer: 5
-  m_Name: Image
+  m_Name: diamond1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -702,7 +702,7 @@ GameObject:
   - component: {fileID: 8592519342572700480}
   - component: {fileID: 3897580896421860187}
   m_Layer: 5
-  m_Name: Image
+  m_Name: diamond2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

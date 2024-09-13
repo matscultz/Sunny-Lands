@@ -11,12 +11,11 @@ public class Player_Precius : MonoBehaviour
     public Button interactButton;
     public DiamondUIManager diamondUIManager;
     private bool nearChest = false;
-    private Animator animator;
+    public Animator animator;
     private IOpenChest open;
     // Start is called before the first frame update
     void Start()
     {
-        animator = gameObject.GetComponent<Animator>();
         interactButton.onClick.AddListener(Interact);
     }
 
@@ -30,10 +29,6 @@ public class Player_Precius : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -46,6 +41,7 @@ public class Player_Precius : MonoBehaviour
 
         if (collider.CompareTag("Diamond"))
         {
+            SoundManager.Instance.PlaySound3D("Diamond", transform.position);
             diamondUIManager.AddDiamond();
             PlaySpecialAnimation();
             Destroy(collider.gameObject);

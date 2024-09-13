@@ -242,7 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinSpawnPoint: {fileID: 2201331824415373690}
   specialCoinPrefab: {fileID: 3743093973909792062, guid: 2996e7dff47839c459cbfef7f20ab29d, type: 3}
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 5645756550781159139, guid: 8fc724ef6e31d9d4fa908c32a938f097, type: 3}
   specialCoinOffset: {x: 0, y: 0.7, z: 0}
   delay: 0.3
   coinTypes:
@@ -252,7 +252,7 @@ MonoBehaviour:
     amount: 4
   - coinPrefab: {fileID: 2356982266596023343, guid: 67099de5cd507e8419f484397f4c9972, type: 3}
     amount: 3
-  diamondUIManager: {fileID: 0}
+  diamondUIManager: {fileID: 6076747955836516647, guid: 41552d115e6d23d48ac272ca42f90228, type: 3}
 --- !u!1 &6491969851605107890
 GameObject:
   m_ObjectHideFlags: 0

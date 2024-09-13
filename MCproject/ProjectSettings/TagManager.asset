@@ -16,6 +16,7 @@ TagManager:
   - AttackZone
   - Health
   - Diamond
+  - DiamondUIManager
   layers:
   - Default
   - TransparentFX

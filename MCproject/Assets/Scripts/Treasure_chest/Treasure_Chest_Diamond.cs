@@ -12,7 +12,6 @@ public class Treasure_Chest_Diamond : MonoBehaviour, IOpenChest
     }
     public Transform coinSpawnPoint;  // Il punto da cui spawnano le monete
     public GameObject specialCoinPrefab;  // Prefab della moneta speciale
-    public Transform playerTransform;     // Riferimento al player
     public Vector3 specialCoinOffset = new Vector3(0, 0.7f, 0);  // Offset per la posizione della moneta speciale
     public float delay;
     public List<CoinType> coinTypes;   // Lista dei tipi di monete e quantità
@@ -20,15 +19,18 @@ public class Treasure_Chest_Diamond : MonoBehaviour, IOpenChest
     private Player_Precius player;
     private Animator animator;
     private bool isOpen = false;
+    private Transform playerTransform;
+    private GameObject playerFind;
 
-   
-   
-    
+
     // Start is called before the first frame update
     void Start()
     {
-       animator = GetComponent<Animator>();
-       player = playerTransform.GetComponent<Player_Precius>();
+        playerFind = GameObject.FindGameObjectWithTag("Player");
+        animator = GetComponent<Animator>();
+        playerTransform = playerFind.transform;
+        player = playerFind.GetComponent<Player_Precius>();
+        diamondUIManager = GameObject.FindGameObjectWithTag("DiamondUIManager").GetComponent<DiamondUIManager>();
     }
 
 
@@ -38,11 +40,12 @@ public class Treasure_Chest_Diamond : MonoBehaviour, IOpenChest
         isOpen = true;
         // Genera monete
         SpawnCoin();
+        animator.SetBool("isOpen", true);
         // Spawna la moneta speciale sopra al player
         player.PlaySpecialAnimation();
         StartCoroutine(SpawnSpecialCoinWithDelay(delay));
 
-        animator.SetBool("isOpen", true);
+        
     }
 
     void SpawnCoin()
@@ -67,7 +70,7 @@ public class Treasure_Chest_Diamond : MonoBehaviour, IOpenChest
 
     void CollectSpecialCoin(GameObject specialCoin)
     {
-
+        SoundManager.Instance.PlaySound3D("Diamond", transform.position);
         diamondUIManager.AddDiamond();
 
     }
