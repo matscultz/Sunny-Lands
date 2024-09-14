@@ -36,6 +36,8 @@ public class Treasure_Chest_Diamond : MonoBehaviour, IOpenChest
 
     public void OpenChest()
     {
+        SoundManager.Instance.PlaySound3D("Chest", transform.position);
+
         if (isOpen) return;  // Evita di aprire la chest più volte
         isOpen = true;
         // Genera monete

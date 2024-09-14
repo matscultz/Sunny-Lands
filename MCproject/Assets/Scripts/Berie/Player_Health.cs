@@ -1,7 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class Player_Health : MonoBehaviour
 {
     public int health;
@@ -14,17 +14,17 @@ public class Player_Health : MonoBehaviour
     public Text healText;
     private static int maxHealth = 100;
     private float immuneTemp;
+
+    // Aggiungi il riferimento allo ScreenFade
+    public ScreenFade screenFade;  // Associa il riferimento allo script ScreenFade
+
     private void Start()
     {
         health = maxHealth;
-        healText.text = ""+health;
+        healText.text = "" + health;
         immuneTemp = immuneDuration;
     }
 
-    private void Update()
-    {
-        
-    }
     public void TakeDamage(int damage)
     {
         if (!isImmune)
@@ -40,42 +40,58 @@ public class Player_Health : MonoBehaviour
             }
             StartCoroutine(ActivateImmunity());
         }
-        
     }
 
     private void Die()
     {
         animator.SetTrigger("Death");
-        immuneDuration = 1.5f;
-        /* GameObject placeholder = new GameObject("Placeholder");
-         placeholder.transform.position = transform.position;
+        BoxCollider2D[] colliders = GetComponents<BoxCollider2D>();
 
-         // Imposta la camera per seguire l'oggetto vuoto
-         cinemachineCamera.Follow = placeholder.transform;
-         // Avvia la coroutine per disabilitare il GameObject dopo l'animazione di morte*/
-        StartCoroutine(DisableAfterDeathAnimation());
+        // Loop through all the colliders and disable them
+        foreach (BoxCollider2D collider in colliders)
+        {
+            collider.enabled = false;
+        }
+        gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+
+        // Avvia il processo di fade e respawn
+        StartCoroutine(HandleDeath());
     }
 
-    IEnumerator DisableAfterDeathAnimation()
+    IEnumerator HandleDeath()
     {
+        // Fai il fade-in (schermo nero)
+        yield return StartCoroutine(screenFade.FadeIn());
+
         // Aspetta la durata dell'animazione di morte
         yield return new WaitForSeconds(deadAnimation);
 
         // Disabilita il player temporaneamente
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        BoxCollider2D[] colliders = GetComponents<BoxCollider2D>();
 
+        // Loop through all the colliders and disable them
+        foreach (BoxCollider2D collider in colliders)
+        {
+            collider.enabled = true;
+        }
+        gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         // Notifica il GameManager che il player deve rinascere
+        animator.Play("character_berie_idle");
         GameManager.Instance.RespawnPlayer();
+        // Riabilita il player e resetta la sua salute
+        //gameObject.SetActive(true);
+        ResetHealth();
 
-        // Riabilita il player
-        gameObject.SetActive(true);
+        // Fai il fade-out (schermo torna normale)
+        yield return StartCoroutine(screenFade.FadeOut());
     }
 
     IEnumerator ActivateImmunity()
     {
         isImmune = true;
 
-        // Aspetta fino al termine dell'animazione
+        // Aspetta fino al termine dell'immunità
         yield return new WaitForSeconds(immuneDuration);
 
         // Disattiva l'immunità
@@ -86,8 +102,8 @@ public class Player_Health : MonoBehaviour
     {
         health += amount;
         UpdateHealthUI();
-        
     }
+
     void UpdateHealthUI()
     {
         healText.text = "" + health;

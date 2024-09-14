@@ -145,7 +145,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2745916007161637564}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -242,7 +242,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinSpawnPoint: {fileID: 2201331824415373690}
   specialCoinPrefab: {fileID: 3743093973909792062, guid: 2996e7dff47839c459cbfef7f20ab29d, type: 3}
-  playerTransform: {fileID: 5645756550781159139, guid: 8fc724ef6e31d9d4fa908c32a938f097, type: 3}
   specialCoinOffset: {x: 0, y: 0.7, z: 0}
   delay: 0.3
   coinTypes:

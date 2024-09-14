@@ -10,6 +10,7 @@ public class Player_Combact : MonoBehaviour
     public Transform attackPointB;
     public LayerMask enemyLayers;
     public LayerMask barrelLayers;
+    public LayerMask otherLayers;
     public int attackDamage = 1;
     [SerializeField] public float areaWidth = 1f;
     private Rigidbody2D _rigidbody;
@@ -17,7 +18,7 @@ public class Player_Combact : MonoBehaviour
     private float lastAttackTime = -Mathf.Infinity; // Tempo dell'ultimo attacco
     public string attackAnimationName = "Attack"; // Nome del trigger dell'animazione di attacco
     public Button attackButton;
-
+    private int layerCount = 0;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -48,6 +49,7 @@ public class Player_Combact : MonoBehaviour
     {
         if (Time.time >= lastAttackTime + attackCooldown)
         {
+            SoundManager.Instance.PlaySound3D("NoHit", transform.position);
             Attack();
             lastAttackTime = Time.time; // Aggiorna il tempo dell'ultimo attacco
         }
@@ -62,6 +64,7 @@ public class Player_Combact : MonoBehaviour
 
         Collider2D[] hitEnemies = Physics2D.OverlapAreaAll(min, max, enemyLayers);
         Collider2D[] hitBarrels = Physics2D.OverlapAreaAll(min, max, barrelLayers);
+        Collider2D[] other = Physics2D.OverlapAreaAll(min, max, otherLayers);
 
         foreach (Collider2D enemy in hitEnemies)
         {
@@ -71,11 +74,13 @@ public class Player_Combact : MonoBehaviour
             
             if (damageable != null)
             {
+                SoundManager.Instance.PlaySound3D("HitSomething", transform.position);
                 damageable.TakeDamage(attackDamage);
             }
 
             if (enemy.gameObject.name.Equals("trap_bomb"))
             {
+                SoundManager.Instance.PlaySound3D("HitSomething", transform.position);
                 enemy.gameObject.GetComponent<Trap_Bomb>().StarExplosion();
             }
 
@@ -85,16 +90,27 @@ public class Player_Combact : MonoBehaviour
             
                 if (barrel.gameObject.name.Equals("Barrel_heavy"))
                 {
-                    barrel.gameObject.GetComponent<Barrel_Heavy>().HitDestroy();
+                SoundManager.Instance.PlaySound3D("HitSomething", transform.position);
+
+                barrel.gameObject.GetComponent<Barrel_Heavy>().HitDestroy();
 
                 }
                 if (barrel.gameObject.name.Equals("Barrel_light"))
                 {
-                    barrel.gameObject.GetComponent<Barrel_Light>().HitDestroy();
+                SoundManager.Instance.PlaySound3D("HitSomething", transform.position);
+
+                barrel.gameObject.GetComponent<Barrel_Light>().HitDestroy();
                 }
 
         }
-        
+
+        foreach (Collider2D otr in other)
+        {
+            SoundManager.Instance.PlaySound3D("HitSomething", transform.position);
+        }
+
+
+
 
     }
 

@@ -67,7 +67,7 @@ MonoBehaviour:
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.55
-  m_CameraDistance: 7
+  m_CameraDistance: 6
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 3083199239476204098}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4041453, z: -7.6}
+  m_LocalPosition: {x: 0, y: 0.3464102, z: -6.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -422,11 +422,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1022841958811819655, guid: 820a410efaedac44b905185b587c5e1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.25
+      value: -11.4
       objectReference: {fileID: 0}
     - target: {fileID: 1022841958811819655, guid: 820a410efaedac44b905185b587c5e1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.82
+      value: 0.565
       objectReference: {fileID: 0}
     - target: {fileID: 1022841958811819655, guid: 820a410efaedac44b905185b587c5e1b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -737,6 +737,7 @@ MonoBehaviour:
   isImmune: 0
   immuneDuration: 1
   healText: {fileID: 0}
+  screenFade: {fileID: 0}
 --- !u!114 &3914023215605482923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -752,6 +753,8 @@ MonoBehaviour:
   coin: 0
   scoreText: {fileID: 0}
   interactButton: {fileID: 0}
+  diamondUIManager: {fileID: 0}
+  animator: {fileID: 4180180913019573514}
 --- !u!114 &8315359604054812349
 MonoBehaviour:
   m_ObjectHideFlags: 0
