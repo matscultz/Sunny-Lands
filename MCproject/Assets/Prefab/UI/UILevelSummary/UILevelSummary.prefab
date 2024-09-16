@@ -401,8 +401,9 @@ GameObject:
   - component: {fileID: 4034377536297552445}
   - component: {fileID: 7032255242032505686}
   - component: {fileID: 572799669119568290}
+  - component: {fileID: 5199110946457909777}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: LevelSelectionMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -509,7 +510,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7032255242032505686}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5199110946457909777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4320245702015259543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d411abb56e7ad7c4798bdfe2c0e84579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4579744464879085666
 GameObject:
   m_ObjectHideFlags: 0
