@@ -13,6 +13,7 @@ public class DiamondUIManager : MonoBehaviour
     {
         if (collectedDiamonds < diamondSlots.Length)
         {
+            GameManager.Instance.DiamantiPresi++;
             diamondSlots[collectedDiamonds].sprite = diamondIcon; // Sostituisci lo slot nero con l'icona del diamante
             diamondSlots[collectedDiamonds].color = Color.white;
             collectedDiamonds++;

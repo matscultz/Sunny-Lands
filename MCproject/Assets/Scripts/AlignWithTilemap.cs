@@ -9,6 +9,8 @@ public class AlignWithTilemap : MonoBehaviour
 
     void Start()
     {
+        GameObject grid = GameObject.Find("Grid");
+        tilemap = grid.transform.GetChild(0).GetComponent<Tilemap>();
         // Prendi la posizione dell'oggetto (che è lo stesso a cui è collegato lo script)
         Vector3 worldPosition = transform.position;
 

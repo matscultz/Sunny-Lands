@@ -34,7 +34,10 @@ public class Trap_Bomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isExplode)
+        {
+            SoundManager.Instance.StopSound3D("BombActivated");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -82,8 +85,10 @@ public class Trap_Bomb : MonoBehaviour
         animator.SetBool("Allert3", true);
 
         yield return new WaitForSeconds(allert3Animation);
-        animator.SetBool("isExplode", true);
         isExplode = true;
+        animator.SetBool("isExplode", true);
+        
+        SoundManager.Instance.PlaySound3D("Bomb", transform.position);
         rb.gravityScale = 0f;
         explosionCollider.enabled = true;
         boxCollider2D.enabled = false;
@@ -97,9 +102,14 @@ public class Trap_Bomb : MonoBehaviour
 
     public void StarExplosion()
     {
-        isHit = true;
-        animator.SetBool("isHit", true);
-        StartCoroutine(PlayExplosionSequence());
+        if (!isHit)
+        {
+            isHit = true;
+            // Riproduci l'audio quando isHit diventa true
+            SoundManager.Instance.PlaySound3D("BombActivated", transform.position);
+            animator.SetBool("isHit", true);
+            StartCoroutine(PlayExplosionSequence());
+        }
     }
     public bool GetIsHit()
     {

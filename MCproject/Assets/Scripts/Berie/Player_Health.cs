@@ -53,18 +53,19 @@ public class Player_Health : MonoBehaviour
             collider.enabled = false;
         }
         gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-
+        SoundManager.Instance.PlaySound3D("Dead", transform.position);
         // Avvia il processo di fade e respawn
         StartCoroutine(HandleDeath());
     }
 
     IEnumerator HandleDeath()
     {
-        // Fai il fade-in (schermo nero)
-        yield return StartCoroutine(screenFade.FadeIn());
 
         // Aspetta la durata dell'animazione di morte
         yield return new WaitForSeconds(deadAnimation);
+
+        // Fai il fade-in (schermo nero)
+        yield return StartCoroutine(screenFade.FadeIn());
 
         // Disabilita il player temporaneamente
         //gameObject.SetActive(false);
@@ -111,7 +112,7 @@ public class Player_Health : MonoBehaviour
 
     public void ResetHealth()
     {
-        health = maxHealth;
+        health = 50;
         UpdateHealthUI();
         isImmune = false;
         immuneDuration = immuneTemp;

@@ -11,18 +11,18 @@ public class Player_Precius : MonoBehaviour
     public Button interactButton;
     public DiamondUIManager diamondUIManager;
     private bool nearChest = false;
-    public Animator animator;
+    private Animator animator;
     private IOpenChest open;
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         interactButton.onClick.AddListener(Interact);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("animator "+animator != null);
         if (nearChest && Input.GetKeyDown(KeyCode.L))
         {
             open.OpenChest();
@@ -60,6 +60,7 @@ public class Player_Precius : MonoBehaviour
     {
         coin += value;
         UpdateScoreUI();
+        GameManager.Instance.MonetePrese+=value;
     }
 
     void UpdateScoreUI()

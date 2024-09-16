@@ -41,4 +41,22 @@ public class SoundManager : MonoBehaviour
     {
         sfx2DSource.PlayOneShot(sfxLibrary.GetClipFromName(soundName));
     }
+
+    public void StopSound3D(string soundName)
+    {
+        StopSound3D(sfxLibrary.GetClipFromName(soundName));
+    }
+    // Metodo per fermare un suono 3D
+    public void StopSound3D(AudioClip soundName)
+    {
+        AudioSource[] source = FindObjectsOfType<AudioSource>();
+            for(int i=0; i<source.Length; i++)
+        {
+            if (source[i].clip.name.Equals(soundName.name))
+            {
+                Destroy(source[i].gameObject);
+            }
+        }
+
+    }
 }

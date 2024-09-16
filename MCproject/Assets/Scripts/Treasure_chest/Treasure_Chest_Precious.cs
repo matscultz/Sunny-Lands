@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Treasure_Chest_Default : MonoBehaviour, IOpenChest
+public class Treasure_Chest_Precious : MonoBehaviour, IOpenChest
 {
-
-    public GameObject coinPrefab;  // Prefab della moneta
-    public Transform coinSpawnPoint;  // Il punto da cui spawnano le monete
+    [System.Serializable]
+    public class CoinType
+    {
+        public GameObject coinPrefab;  // Prefab della moneta
+        public int amount;             // Numero di monete di questo tipo da spawnare
+    }
+    public List<CoinType> coinTypes;   // Lista dei tipi di monete e quantità
     public int numCoins = 10;  // Numero di monete da spawnare
     public GameObject specialCoinPrefab;  // Prefab della moneta speciale
     public Transform playerTransform;     // Riferimento al player
@@ -16,11 +20,13 @@ public class Treasure_Chest_Default : MonoBehaviour, IOpenChest
     private Animator animator;
     private bool isOpen = false;
     private GameObject playerFind;
+    private Transform coinSpawnPoint;  // Il punto da cui spawnano le monete
 
     // Start is called before the first frame update
 
     void Start()
     {
+        coinSpawnPoint = transform.GetChild(0);
         playerFind = GameObject.FindGameObjectWithTag("Player");
         animator = GetComponent<Animator>();
         playerTransform = playerFind.transform;
@@ -32,11 +38,10 @@ public class Treasure_Chest_Default : MonoBehaviour, IOpenChest
     {
         if (isOpen) return;  // Evita di aprire la chest più volte
         isOpen = true;
+        SoundManager.Instance.PlaySound3D("Chest", transform.position);
+
         // Genera monete
-        for (int i = 0; i < numCoins; i++)
-        {
-            SpawnCoin();
-        }
+        SpawnCoin();
         // Spawna la moneta speciale sopra al player
         player.PlaySpecialAnimation();
         StartCoroutine(SpawnSpecialCoinWithDelay(delay));
@@ -46,12 +51,19 @@ public class Treasure_Chest_Default : MonoBehaviour, IOpenChest
 
     void SpawnCoin()
     {
-        GameObject coin = Instantiate(coinPrefab, coinSpawnPoint.position, Quaternion.identity);
-        Rigidbody2D rb = coin.GetComponent<Rigidbody2D>();
-        // Impulso verso l'alto e casuale in direzione orizzontale
-        float forceX = Random.Range(-2f, 2f);
-        float forceY = Random.Range(2f, 5f);
-        rb.AddForce(new Vector2(forceX, forceY), ForceMode2D.Impulse);
+        foreach (CoinType coinType in coinTypes)
+        {
+            for (int i = 0; i < coinType.amount; i++)
+            {
+                // Calcola la posizione di spawn attorno al giocatore
+                GameObject coinInstance = Instantiate(coinType.coinPrefab, coinSpawnPoint.position, Quaternion.identity);
+                Rigidbody2D rb = coinInstance.GetComponent<Rigidbody2D>();
+                float forceX = Random.Range(-2f, 2f);
+                float forceY = Random.Range(2f, 5f);
+                // Impulso verso l'alto e casuale in direzione orizzontale
+                rb.AddForce(new Vector2(forceX, forceY), ForceMode2D.Impulse);
+            }
+        }
     }
 
 

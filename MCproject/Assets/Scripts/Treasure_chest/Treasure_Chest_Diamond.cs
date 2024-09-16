@@ -10,7 +10,6 @@ public class Treasure_Chest_Diamond : MonoBehaviour, IOpenChest
         public GameObject coinPrefab;  // Prefab della moneta
         public int amount;             // Numero di monete di questo tipo da spawnare
     }
-    public Transform coinSpawnPoint;  // Il punto da cui spawnano le monete
     public GameObject specialCoinPrefab;  // Prefab della moneta speciale
     public Vector3 specialCoinOffset = new Vector3(0, 0.7f, 0);  // Offset per la posizione della moneta speciale
     public float delay;
@@ -21,11 +20,13 @@ public class Treasure_Chest_Diamond : MonoBehaviour, IOpenChest
     private bool isOpen = false;
     private Transform playerTransform;
     private GameObject playerFind;
+    private Transform coinSpawnPoint;  // Il punto da cui spawnano le monete
 
 
     // Start is called before the first frame update
     void Start()
     {
+        coinSpawnPoint = transform.GetChild(0);
         playerFind = GameObject.FindGameObjectWithTag("Player");
         animator = GetComponent<Animator>();
         playerTransform = playerFind.transform;

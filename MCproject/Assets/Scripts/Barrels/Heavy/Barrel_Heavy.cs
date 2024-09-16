@@ -26,7 +26,7 @@ public class Barrel_Heavy : MonoBehaviour
             Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
             if (playerRb != null)
             {
-                
+                SoundManager.Instance.PlaySound3D("Bounce Barrel", transform.position);
                 Vector2 bounce = new Vector2(0, bounceForce);
                 playerRb.velocity = new Vector2(playerRb.velocity.x, bounce.y);
             }

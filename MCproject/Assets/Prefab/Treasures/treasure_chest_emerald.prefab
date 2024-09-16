@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 321188435374654526}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3687802106837985667}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.19, z: 0}
+  m_LocalPosition: {x: 0, y: 0.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,8 +45,9 @@ GameObject:
   - component: {fileID: 8447559290405051071}
   - component: {fileID: 656242047116504683}
   - component: {fileID: 1337098164808323710}
-  - component: {fileID: 429713416402136688}
-  m_Layer: 7
+  - component: {fileID: 139934607577636662}
+  - component: {fileID: 1638740985797560951}
+  m_Layer: 11
   m_Name: treasure_chest_emerald
   m_TagString: Chest
   m_Icon: {fileID: 0}
@@ -259,7 +260,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
---- !u!114 &429713416402136688
+--- !u!114 &139934607577636662
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -268,13 +269,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 4439535530108596522}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9ffbaa00d3fd547962a7094d837077, type: 3}
+  m_Script: {fileID: 11500000, guid: 46bf160b272427d49a7c1c805a876bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPrefab: {fileID: 0}
-  coinSpawnPoint: {fileID: 0}
+  coinTypes:
+  - coinPrefab: {fileID: 6507589714795019061, guid: 0416790cb49d0e14f92a9dd39b2b3a31, type: 3}
+    amount: 6
+  - coinPrefab: {fileID: 8035550996084076836, guid: 043cb0ebedf62ee41a84f585c7348162, type: 3}
+    amount: 5
   numCoins: 10
-  specialCoinPrefab: {fileID: 0}
+  specialCoinPrefab: {fileID: 2356982266596023343, guid: 806f2b5c38ffdb744bc201af55601435, type: 3}
   playerTransform: {fileID: 0}
   specialCoinOffset: {x: 0, y: 0.7, z: 0}
-  delay: 0
+  delay: 0.3
+--- !u!114 &1638740985797560951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4439535530108596522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45752d069fed7104c9bfc81e0f9b9e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 0}

@@ -212,7 +212,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3083199239476204098}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!114 &61033919212762083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -713,6 +713,9 @@ MonoBehaviour:
   barrelLayers:
     serializedVersion: 2
     m_Bits: 32768
+  otherLayers:
+    serializedVersion: 2
+    m_Bits: 8
   attackDamage: 1
   areaWidth: 0.35
   attackAnimationName: Attack
@@ -730,7 +733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  deadAnimation: 1
+  deadAnimation: 1.3
   animator: {fileID: 4180180913019573514}
   hitAnimationName: Hit
   cinemachineCamera: {fileID: 3640708841427197817}

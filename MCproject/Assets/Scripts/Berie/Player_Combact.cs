@@ -18,7 +18,6 @@ public class Player_Combact : MonoBehaviour
     private float lastAttackTime = -Mathf.Infinity; // Tempo dell'ultimo attacco
     public string attackAnimationName = "Attack"; // Nome del trigger dell'animazione di attacco
     public Button attackButton;
-    private int layerCount = 0;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
