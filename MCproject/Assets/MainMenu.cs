@@ -9,5 +9,10 @@ public class MainMenu : MonoBehaviour
     {
         MusicManager.Instance.PlayMusic("MainMenu");
     }
+
+    public void OpenScene()
+    {
+        SceneManager.LoadScene(1);
+    }
 }
 
