@@ -7,15 +7,18 @@ public class Player_Precius : MonoBehaviour
 {
     public static Player_Precius instance;
     public int coin = 0;
-    public Text scoreText;
-    public Button interactButton;
-    public DiamondUIManager diamondUIManager;
+    private Text scoreText;
+    private Button interactButton;
+    private DiamondUIManager diamondUIManager;
     private bool nearChest = false;
     private Animator animator;
     private IOpenChest open;
     // Start is called before the first frame update
     void Start()
     {
+        scoreText = GameObject.Find("CoinText").GetComponent<Text>();
+        interactButton = GameObject.Find("Interact").GetComponent<Button>();
+        diamondUIManager = GameObject.Find("DiamondUIManager").GetComponent<DiamondUIManager>();
         animator = GetComponent<Animator>();
         interactButton.onClick.AddListener(Interact);
     }
@@ -60,7 +63,7 @@ public class Player_Precius : MonoBehaviour
     {
         coin += value;
         UpdateScoreUI();
-        GameManager.Instance.MonetePrese+=value;
+        GameManager.Instance.CoinCount+=value;
     }
 
     void UpdateScoreUI()

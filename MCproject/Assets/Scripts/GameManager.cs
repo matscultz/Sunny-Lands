@@ -5,20 +5,23 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
+    public int totalLevels;
+    private int levelIndex;
     private Vector3 lastCheckpointPosition;
     private Player_Health playerHealth;
     private Player_Precius playerScore;
-    private int numeroMorti;
-    private int diamantiPresi;
-    private int monetePrese;
-    private float tempoImpiegato;
+    private int deathCount;
+    private int diamondCount;
+    private int coinCount;
+    private float elapsedTime;
     private bool levelComplete = false;
+    private bool[] levelsUnlocked;
 
-    public int NumeroMorti { get => numeroMorti; set => numeroMorti = value; }
-    public int DiamantiPresi { get => diamantiPresi; set => diamantiPresi = value; }
-    public float TempoImpiegato { get => tempoImpiegato; set => tempoImpiegato = value; }
-    public int MonetePrese { get => monetePrese; set => monetePrese = value; }
+    public int DeathCount { get => deathCount; set => deathCount = value; }
+    public int DiamondCount { get => diamondCount; set => diamondCount = value; }
+    public float ElapsedTime { get => elapsedTime; set => elapsedTime = value; }
+    public int CoinCount { get => coinCount; set => coinCount = value; }
+    public int LevelIndex { get => levelIndex; set => levelIndex = value; }
 
     private void Awake()
     {
@@ -34,22 +37,26 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if (!levelComplete)
-        {
-            // Aumenta il timer del livello finché non è completato
-            TempoImpiegato += Time.deltaTime;
-        }
-    }
 
     private void Start()
     {
-        numeroMorti = 0;
-        DiamantiPresi = 0;
+        totalLevels = 6;
+        levelsUnlocked = SaveManager.LoadGame(totalLevels);
+        deathCount = 0;
+        DiamondCount = 0;
         // Trova gli script del Player
         playerHealth = FindObjectOfType<Player_Health>();
         playerScore = FindObjectOfType<Player_Precius>();
+
+    }
+    void Update()
+    {
+        Debug.Log(LevelIndex);
+        if (!levelComplete)
+        {
+            // Aumenta il timer del livello finché non è completato
+            ElapsedTime += Time.deltaTime;
+        }
     }
 
     // Imposta la posizione del checkpoint
@@ -61,7 +68,7 @@ public class GameManager : MonoBehaviour
     // Ripristina il player alla posizione del checkpoint
     public void RespawnPlayer()
     {
-        numeroMorti++;
+        deathCount++;
         // Imposta la posizione del player al checkpoint
         playerHealth.transform.position = lastCheckpointPosition;
 
@@ -71,8 +78,21 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void CompleteLevel()
+    public void CompleteLevel(int levelIndex)
     {
-        levelComplete = true;
+        if (levelIndex >= 0 && levelIndex < levelsUnlocked.Length)
+        {
+            // Segna il livello corrente come completato
+            levelsUnlocked[levelIndex] = true;
+
+            // Sblocca anche il livello successivo, se esiste
+            if (levelIndex + 1 < levelsUnlocked.Length)
+            {
+                levelsUnlocked[levelIndex + 1] = true;
+            }
+
+            // Salva lo stato aggiornato dei livelli
+            SaveManager.SaveGame(levelsUnlocked);
+        }
     }
 }

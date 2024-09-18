@@ -20,6 +20,7 @@ public class Player_Combact : MonoBehaviour
     public Button attackButton;
     void Start()
     {
+        attackButton = GameObject.Find("Attack").GetComponent<Button>();
         _rigidbody = GetComponent<Rigidbody2D>();
         // Calcola la durata dell'animazione di attacco
         AnimatorClipInfo[] clipInfo = animator.GetCurrentAnimatorClipInfo(0);

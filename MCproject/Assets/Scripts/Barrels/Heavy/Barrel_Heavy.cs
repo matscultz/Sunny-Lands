@@ -48,6 +48,7 @@ public class Barrel_Heavy : MonoBehaviour
                 {
                     animator.SetTrigger("Destroy");
                 }
+                SoundManager.Instance.PlaySound3D("BarrelSmash", transform.position);
 
                 // Distruggi l'oggetto dopo un breve ritardo per permettere all'animazione di completarsi
                 Invoke("DestroyObject", durataAnimazione); // Cambia il ritardo in base alla durata dell'animazione
@@ -59,11 +60,14 @@ public class Barrel_Heavy : MonoBehaviour
     // Funzione per distruggere l'oggetto
     void DestroyObject()
     {
+
         Destroy(gameObject);
     }
 
     public void HitDestroy()
     {
+        SoundManager.Instance.PlaySound3D("BarrelSmash", transform.position);
+
         animator.SetTrigger("Destroy");
         Invoke("DestroyObject", durataAnimazione);
         isDestroyed = true;

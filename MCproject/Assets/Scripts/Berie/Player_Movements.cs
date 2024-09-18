@@ -19,10 +19,10 @@ public class Player_Movements : MonoBehaviour
     public LayerMask enemyLayer;
     public float knockbackForce = 5f;
     public int attackDamage = 0;
-    public MoveButton leftButton;
-    public MoveButton rightButton;
-    public Button jumpButton;
-
+    
+    private MoveButton leftButton;
+    private MoveButton rightButton;
+    private Button jumpButton;
     private CinemachineFramingTransposer framingTransposer;
     private Rigidbody2D _rigidbody;
     private float scale;
@@ -32,6 +32,9 @@ public class Player_Movements : MonoBehaviour
 
     void Start()
     {
+        leftButton = GameObject.Find("Left").GetComponent<MoveButton>();
+        rightButton = GameObject.Find("Right").GetComponent<MoveButton>();
+        jumpButton = GameObject.Find("Jump").GetComponent<Button>();
         animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
         scale = transform.localScale.x;

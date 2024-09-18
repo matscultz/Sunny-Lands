@@ -20,6 +20,9 @@ public class Player_Health : MonoBehaviour
 
     private void Start()
     {
+        screenFade = GameObject.Find("Blackscreen").GetComponent<ScreenFade>();
+        animator = GetComponent<Animator>();
+        healText = GameObject.Find("HealText").GetComponent<Text>();
         health = maxHealth;
         healText.text = "" + health;
         immuneTemp = immuneDuration;
@@ -30,6 +33,7 @@ public class Player_Health : MonoBehaviour
         if (!isImmune)
         {
             animator.SetTrigger(hitAnimationName); // Trigger animazione colpo subito
+            SoundManager.Instance.PlaySound3D("GetHit", transform.position);
             health -= damage;
             if (health < 0)
                 health = 0;

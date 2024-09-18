@@ -29,10 +29,10 @@ public class Barrel_Light : MonoBehaviour
                 playerRb.velocity = new Vector2(playerRb.velocity.x, bounce.y);
                 animator.SetTrigger("Destroy");
             }
-
-                // Distruggi l'oggetto dopo un breve ritardo per permettere all'animazione di completarsi
-                Invoke("DestroyObject", durataAnimazione); // Cambia il ritardo in base alla durata dell'animazione
-                isDestroyed = true;
+            SoundManager.Instance.PlaySound3D("BarrelSmash", transform.position);
+            // Distruggi l'oggetto dopo un breve ritardo per permettere all'animazione di completarsi
+            Invoke("DestroyObject", durataAnimazione); // Cambia il ritardo in base alla durata dell'animazione
+            isDestroyed = true;
            
         }
     }
@@ -40,11 +40,14 @@ public class Barrel_Light : MonoBehaviour
     // Funzione per distruggere l'oggetto
     void DestroyObject()
     {
+        
+
         Destroy(gameObject);
     }
 
     public void HitDestroy()
     {
+        SoundManager.Instance.PlaySound3D("BarrelSmash", transform.position);
         animator.SetTrigger("Destroy");
         Invoke("DestroyObject", durataAnimazione);
         isDestroyed = true;
