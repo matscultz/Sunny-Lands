@@ -13,7 +13,7 @@ public class LevelSelectionScene : MonoBehaviour
     {
         for (int i = 0; i < 6; i++)
         {
-            buttons[i] = gameObject.transform.Find("Level" + (i + 1)).GetComponent<Button>();
+            buttons[i] = gameObject.transform.Find("level" + (i + 1)).GetComponent<Button>();
         }
     }
 
@@ -39,7 +39,7 @@ public class LevelSelectionScene : MonoBehaviour
         if (levelId > 0 && levelId <= buttons.Length)
         {
             GameManager.Instance.LevelIndex = levelId-1;
-            string levelName = "Level" + levelId;
+            string levelName = "Livello" + levelId;
             SceneManager.LoadScene(levelName);
             MusicManager.Instance.PlayMusic("Level");
         }
