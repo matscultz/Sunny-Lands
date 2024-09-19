@@ -40,8 +40,6 @@ public class Barrel_Light : MonoBehaviour
     // Funzione per distruggere l'oggetto
     void DestroyObject()
     {
-        
-
         Destroy(gameObject);
     }
 

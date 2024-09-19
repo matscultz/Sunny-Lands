@@ -51,7 +51,6 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(LevelIndex);
         if (!levelComplete)
         {
             // Aumenta il timer del livello finché non è completato
