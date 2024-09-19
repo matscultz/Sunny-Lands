@@ -10,6 +10,11 @@ public class VolumeScript : MonoBehaviour
     [SerializeField] private AudioMixer myMixer;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider SFXSlider;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject); // Fa sì che l'oggetto persista tra le scene
+    }
     private void Start()
     {
         if(PlayerPrefs.HasKey("musicVolume"))
@@ -21,13 +26,16 @@ public class VolumeScript : MonoBehaviour
             SetMusicVolume();
             SetSFXVolume();
         }
-       
+        // Aggiungi event listeners
+        musicSlider.onValueChanged.AddListener(delegate { SetMusicVolume(); });
+        SFXSlider.onValueChanged.AddListener(delegate { SetSFXVolume(); });
     }
     public void SetMusicVolume()
     {
         float volume = musicSlider.value;
         myMixer.SetFloat("MusicVolume", Mathf.Log10(volume)*20);
         PlayerPrefs.SetFloat("musicVolume", volume);
+        PlayerPrefs.Save();
     }
 
     public void SetSFXVolume()
@@ -35,6 +43,7 @@ public class VolumeScript : MonoBehaviour
         float volume = SFXSlider.value;
         myMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("SFXVolume", volume);
+        PlayerPrefs.Save();
     }
 
     private void LoadVolume()

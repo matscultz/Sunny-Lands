@@ -13,7 +13,7 @@ public class LevelSelectionScene : MonoBehaviour
     {
         for (int i = 0; i < 6; i++)
         {
-            buttons[i] = gameObject.transform.Find("Level" + (i + 1)).GetComponent<Button>();
+            buttons[i] = gameObject.transform.Find("level" + (i + 1)).GetComponent<Button>();
         }
     }
 

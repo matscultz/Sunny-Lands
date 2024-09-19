@@ -205,7 +205,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &37454742
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1366,7 +1366,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2030518210}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: VolumeScript, Assembly-CSharp
         m_MethodName: SetMusicVolume
         m_Mode: 1
@@ -2541,6 +2541,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683498538}
   m_CullTransparentMesh: 1
+--- !u!1001 &728126049
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1476827177701188606, guid: 579828ebab7b5f940ab67edabd45b136, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.570058
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476827177701188606, guid: 579828ebab7b5f940ab67edabd45b136, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.0267581
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476827177701188606, guid: 579828ebab7b5f940ab67edabd45b136, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.008863547
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476827177701188606, guid: 579828ebab7b5f940ab67edabd45b136, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476827177701188606, guid: 579828ebab7b5f940ab67edabd45b136, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476827177701188606, guid: 579828ebab7b5f940ab67edabd45b136, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476827177701188606, guid: 579828ebab7b5f940ab67edabd45b136, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476827177701188606, guid: 579828ebab7b5f940ab67edabd45b136, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476827177701188606, guid: 579828ebab7b5f940ab67edabd45b136, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476827177701188606, guid: 579828ebab7b5f940ab67edabd45b136, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7134052919502996950, guid: 579828ebab7b5f940ab67edabd45b136, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 579828ebab7b5f940ab67edabd45b136, type: 3}
 --- !u!1 &815135863
 GameObject:
   m_ObjectHideFlags: 0
@@ -2632,7 +2689,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2030518210}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: VolumeScript, Assembly-CSharp
         m_MethodName: SetSFXVolume
         m_Mode: 1
@@ -4272,6 +4329,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215856071}
   m_CullTransparentMesh: 1
+--- !u!1 &1263662268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1263662270}
+  - component: {fileID: 1263662269}
+  m_Layer: 0
+  m_Name: VolumeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1263662269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263662268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdcee5728a1d25c4aac986feaa5095e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMixer: {fileID: 24100000, guid: 0357b12b01c5fa34bbae28652ce8e759, type: 2}
+  musicSlider: {fileID: 418472707}
+  SFXSlider: {fileID: 1886924077}
+--- !u!4 &1263662270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263662268}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.727827, y: 1.2817571, z: 0.033587128}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1336627461
 GameObject:
   m_ObjectHideFlags: 0
@@ -6250,7 +6354,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2030518210}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: VolumeScript, Assembly-CSharp
         m_MethodName: SetSFXVolume
         m_Mode: 1
@@ -6829,7 +6933,6 @@ GameObject:
   - component: {fileID: 2030518213}
   - component: {fileID: 2030518212}
   - component: {fileID: 2030518211}
-  - component: {fileID: 2030518210}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -6859,21 +6962,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2030518210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2030518208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdcee5728a1d25c4aac986feaa5095e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myMixer: {fileID: 24100000, guid: 0357b12b01c5fa34bbae28652ce8e759, type: 2}
-  musicSlider: {fileID: 418472707}
-  SFXSlider: {fileID: 1886924077}
 --- !u!114 &2030518211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7170,3 +7258,5 @@ SceneRoots:
   - {fileID: 1362590344}
   - {fileID: 8410861}
   - {fileID: 58227859}
+  - {fileID: 728126049}
+  - {fileID: 1263662270}
