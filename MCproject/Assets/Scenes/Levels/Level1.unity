@@ -377,7 +377,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0000076293945, y: 1.3}
+  m_AnchoredPosition: {x: 2, y: 1.3}
   m_SizeDelta: {x: 32.4609, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &367989694
@@ -401,7 +401,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3a401188a61d22647937c49b2b81b2f3, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -593,8 +593,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.7, y: 0.0000092983}
-  m_SizeDelta: {x: 317.7669, y: 54.97}
+  m_AnchoredPosition: {x: 3, y: 0.0000092983}
+  m_SizeDelta: {x: 394.5745, y: 54.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &485217809
 MonoBehaviour:
@@ -609,7 +609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -617,11 +617,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 3a401188a61d22647937c49b2b81b2f3, type: 3}
+    m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 4
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3871,8 +3871,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15.002, y: 201.4}
-  m_SizeDelta: {x: 390.004, y: 66.3823}
+  m_AnchoredPosition: {x: -4.5, y: 195.4566}
+  m_SizeDelta: {x: 405.5485, y: 81.9267}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2001539521
 MonoBehaviour:
@@ -3894,8 +3894,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2038549072, guid: 96fcb168e9e38ff489e6c3c70330e08b, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 2066742151, guid: 8fb99b608ec6cee4d92783a7741956eb, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4100,8 +4100,7 @@ GameObject:
   - component: {fileID: 2133160873}
   - component: {fileID: 2133160872}
   - component: {fileID: 2133160871}
-  - component: {fileID: 2133160870}
-  - component: {fileID: 2133160869}
+  - component: {fileID: 2133160874}
   m_Layer: 5
   m_Name: LevelSelectionMenu
   m_TagString: Untagged
@@ -4126,33 +4125,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.9471, y: -169.7}
-  m_SizeDelta: {x: 227.5615, y: 35.6828}
+  m_AnchoredPosition: {x: -2, y: -180}
+  m_SizeDelta: {x: 243.28, y: 75.211}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2133160869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2133160867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d411abb56e7ad7c4798bdfe2c0e84579, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2133160870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2133160867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d411abb56e7ad7c4798bdfe2c0e84579, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2133160871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4197,13 +4172,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 2133160874}
+        m_TargetAssemblyTypeName: LevelSelectionLoader, Assembly-CSharp
+        m_MethodName: LevelSelectionScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4229,8 +4204,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2080309380, guid: 96fcb168e9e38ff489e6c3c70330e08b, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: -1958859491, guid: 37ac8e42d54c9bf4489c9c2fd4a02400, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 2
@@ -4247,6 +4222,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2133160867}
   m_CullTransparentMesh: 1
+--- !u!114 &2133160874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133160867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d411abb56e7ad7c4798bdfe2c0e84579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
