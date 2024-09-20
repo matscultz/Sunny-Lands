@@ -39,7 +39,7 @@ public class LevelSelectionScene : MonoBehaviour
         if (levelId > 0 && levelId <= buttons.Length)
         {
             GameManager.Instance.LevelIndex = levelId-1;
-            string levelName = "Livello" + levelId;
+            string levelName = "Level" + levelId;
             SceneManager.LoadScene(levelName);
             MusicManager.Instance.PlayMusic("Level");
         }
