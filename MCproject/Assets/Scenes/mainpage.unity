@@ -4138,8 +4138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myMixer: {fileID: 24100000, guid: 0357b12b01c5fa34bbae28652ce8e759, type: 2}
-  musicSlider: {fileID: 418472707}
-  SFXSlider: {fileID: 1886924077}
+  musicSlider: {fileID: 0}
+  SFXSlider: {fileID: 0}
 --- !u!4 &1263662270
 Transform:
   m_ObjectHideFlags: 0
@@ -4411,6 +4411,7 @@ GameObject:
   - component: {fileID: 1362590342}
   - component: {fileID: 1362590341}
   - component: {fileID: 1362590345}
+  - component: {fileID: 1362590346}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4518,6 +4519,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3733c1c2aace98048a30f21096099052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1362590346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362590340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2198cb0505d0f6489c8710d8a2ae569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonObjects:
+  - {fileID: 1124872493}
+  - {fileID: 1615725089}
+  - {fileID: 166989880}
+  - {fileID: 1336627461}
+  - {fileID: 998831595}
 --- !u!1 &1366551243
 GameObject:
   m_ObjectHideFlags: 0
@@ -5452,7 +5471,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 58227857}
+        - m_Target: {fileID: 8113731149453445942, guid: 102c30388cd34454bb467580ef156232, type: 3}
           m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
           m_MethodName: PlaySound2D
           m_Mode: 5

@@ -7,6 +7,6 @@ public class LevelSelectionLoader : MonoBehaviour
 {
     public void LevelSelectionScene()
     {
-        SceneManager.LoadScene("LevelSelection_Try");
+        SceneManager.LoadScene("LevelSelection");
     }
 }
