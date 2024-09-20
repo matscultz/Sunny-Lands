@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "894964892062",
+    "project_id": "mcproject-3cd79",
+    "storage_bucket": "mcproject-3cd79.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894964892062:android:5ea232013684e6c6b7168f",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.SunnyLands"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLW-Z_E0MV4UgWnO_YcIlFe6uRcdB1K8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

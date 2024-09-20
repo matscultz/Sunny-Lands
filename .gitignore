@@ -70,3 +70,6 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 MCproject/[Aa]ssets/[Ss]treamingAssets/aa.meta
 MCproject/[Aa]ssets/[Ss]treamingAssets/aa/*
+/MCproject/Assets/Firebase
+/MCproject/Assets/Editor Default Resources
+/MCproject/Assets/TextMesh Pro
