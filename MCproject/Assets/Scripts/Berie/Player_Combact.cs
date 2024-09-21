@@ -49,7 +49,7 @@ public class Player_Combact : MonoBehaviour
     {
         if (Time.time >= lastAttackTime + attackCooldown)
         {
-            SoundManager.Instance.PlaySound3D("NoHit", transform.position);
+            SoundManager.Instance.PlaySound2D("NoHit");
             Attack();
             lastAttackTime = Time.time; // Aggiorna il tempo dell'ultimo attacco
         }
@@ -74,13 +74,13 @@ public class Player_Combact : MonoBehaviour
             
             if (damageable != null)
             {
-                SoundManager.Instance.PlaySound3D("HitSomething", transform.position);
+                SoundManager.Instance.PlaySound2D("HitSomething");
                 damageable.TakeDamage(attackDamage);
             }
 
             if (enemy.gameObject.name.Equals("trap_bomb"))
             {
-                SoundManager.Instance.PlaySound3D("HitSomething", transform.position);
+                SoundManager.Instance.PlaySound2D("HitSomething");
                 enemy.gameObject.GetComponent<Trap_Bomb>().StarExplosion();
             }
 
@@ -90,14 +90,14 @@ public class Player_Combact : MonoBehaviour
             
                 if (barrel.gameObject.name.Equals("Barrel_heavy"))
                 {
-                SoundManager.Instance.PlaySound3D("HitSomething", transform.position);
+                SoundManager.Instance.PlaySound2D("HitSomething");
 
                 barrel.gameObject.GetComponent<Barrel_Heavy>().HitDestroy();
 
                 }
                 if (barrel.gameObject.name.Equals("Barrel_light"))
                 {
-                SoundManager.Instance.PlaySound3D("HitSomething", transform.position);
+                SoundManager.Instance.PlaySound2D("HitSomething");
 
                 barrel.gameObject.GetComponent<Barrel_Light>().HitDestroy();
                 }
@@ -106,7 +106,7 @@ public class Player_Combact : MonoBehaviour
 
         foreach (Collider2D otr in other)
         {
-            SoundManager.Instance.PlaySound3D("HitSomething", transform.position);
+            SoundManager.Instance.PlaySound2D("HitSomething");
         }
 
 

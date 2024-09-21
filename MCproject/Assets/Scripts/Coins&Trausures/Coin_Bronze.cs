@@ -22,7 +22,7 @@ public class Coin_Bronze : MonoBehaviour
     {
 
         collider.gameObject.GetComponent<Player_Precius>().AddCoin(coinValue);
-        SoundManager.Instance.PlaySound3D("Pickup", transform.position);
+        SoundManager.Instance.PlaySound2D("Pickup");
         // Distruggi la moneta una volta raccolta
         Destroy(gameObject);
     }

@@ -20,9 +20,8 @@ public class Coin_Gold : MonoBehaviour
     // Funzione per gestire la raccolta della moneta
     void CollectCoin(Collider2D collider)
     {
-
         collider.gameObject.GetComponent<Player_Precius>().AddCoin(coinValue);
-        SoundManager.Instance.PlaySound3D("Pickup", transform.position);
+        SoundManager.Instance.PlaySound2D("Pickup");
         // Distruggi la moneta una volta raccolta
         Destroy(gameObject);
     }

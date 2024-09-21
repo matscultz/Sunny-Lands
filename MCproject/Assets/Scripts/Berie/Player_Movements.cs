@@ -193,7 +193,7 @@ public class Player_Movements : MonoBehaviour
     {
         if (onGround || jumpTime < 1) // Permetti di saltare se è a terra o se ha fatto meno di 2 salti
         {
-            SoundManager.Instance.PlaySound3D("Jump", transform.position);
+            SoundManager.Instance.PlaySound2D("Jump");
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
             jumpTime++; // Incrementa il contatore dei salti
             onGround = false; // Disabilita ulteriori salti finché non torna a terra

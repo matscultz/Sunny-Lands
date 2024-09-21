@@ -44,7 +44,7 @@ public class Player_Precius : MonoBehaviour
 
         if (collider.CompareTag("Diamond"))
         {
-            SoundManager.Instance.PlaySound3D("Diamond", transform.position);
+            SoundManager.Instance.PlaySound2D("Diamond");
             diamondUIManager.AddDiamond();
             PlaySpecialAnimation();
             Destroy(collider.gameObject);

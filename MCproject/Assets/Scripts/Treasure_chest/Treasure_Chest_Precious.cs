@@ -38,7 +38,7 @@ public class Treasure_Chest_Precious : MonoBehaviour, IOpenChest
     {
         if (isOpen) return;  // Evita di aprire la chest più volte
         isOpen = true;
-        SoundManager.Instance.PlaySound3D("Chest", transform.position);
+        SoundManager.Instance.PlaySound2D("Chest");
 
         // Genera monete
         SpawnCoin();
