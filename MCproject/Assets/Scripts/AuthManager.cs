@@ -51,7 +51,10 @@ public class AuthManager : MonoBehaviour
         });
     }
 
-
+    void Start()
+    {
+            UpdateUserDisplayName();
+    }
     private void InitializeFirebase()
     {
         Debug.Log("Setting up Firebase Auth");
