@@ -73,3 +73,9 @@ MCproject/[Aa]ssets/[Ss]treamingAssets/aa/*
 /MCproject/Assets/Firebase
 /MCproject/Assets/Editor Default Resources
 /MCproject/Assets/TextMesh Pro
+MCproject/Assets/ExternalDependencyManager/Editor/Google.VersionHandler.dll.meta
+MCproject/Assets/ExternalDependencyManager/Editor/1.2.182/Google.VersionHandlerImpl.dll.meta
+MCproject/Assets/ExternalDependencyManager/Editor/1.2.182/Google.PackageManagerResolver.dll.meta
+MCproject/Assets/ExternalDependencyManager/Editor/1.2.182/Google.JarResolver.dll.meta
+MCproject/Assets/ExternalDependencyManager/Editor/1.2.182/Google.IOSResolver.dll.meta
+MCproject/Assets/ExternalDependencyManager/Editor/Google.VersionHandler.dll.meta
