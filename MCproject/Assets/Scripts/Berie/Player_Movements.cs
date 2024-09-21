@@ -28,8 +28,8 @@ public class Player_Movements : MonoBehaviour
     private float scale;
     private bool rightFace = true;
     private bool onGround;
-
-
+    private Rigidbody2D platform;
+    private float movement_x=0;
     void Start()
     {
         leftButton = GameObject.Find("Left").GetComponent<MoveButton>();
@@ -49,7 +49,7 @@ public class Player_Movements : MonoBehaviour
 
     void Update()
     {
-        float movement_x = 0f;
+        //float movement_x = 0f;
         if (leftButton.isPressed)
         {
             movement_x = -1f;
@@ -62,7 +62,7 @@ public class Player_Movements : MonoBehaviour
         {
             movement_x = Input.GetAxisRaw("Horizontal"); // Controllo anche da tastiera
         }
-        _rigidbody.velocity = new Vector2(movement_x * movVel, _rigidbody.velocity.y);
+        //_rigidbody.velocity = new Vector2(movement_x * movVel, _rigidbody.velocity.y);
         animator.SetFloat("Speed", movement_x);
         // Flip dello sprite
         if (movement_x < 0 && rightFace)
@@ -198,6 +198,18 @@ public class Player_Movements : MonoBehaviour
             jumpTime++; // Incrementa il contatore dei salti
             onGround = false; // Disabilita ulteriori salti finché non torna a terra
             
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (platform)
+        {
+            _rigidbody.velocity = new Vector2(movement_x * movVel, _rigidbody.velocity.y) + platform.velocity * Vector2.right;
+        }
+        else
+        {
+            _rigidbody.velocity = new Vector2(movement_x * movVel, _rigidbody.velocity.y);
         }
     }
 }

@@ -17,6 +17,7 @@ TagManager:
   - Health
   - Diamond
   - DiamondUIManager
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
@@ -34,7 +35,7 @@ TagManager:
   - Background
   - Coin
   - Barrel
-  - 
+  - MovingPlatform
   - 
   - 
   - 

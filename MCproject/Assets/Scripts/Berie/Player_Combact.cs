@@ -78,7 +78,7 @@ public class Player_Combact : MonoBehaviour
                 damageable.TakeDamage(attackDamage);
             }
 
-            if (enemy.gameObject.name.Equals("trap_bomb"))
+            if (enemy.gameObject.name.StartsWith("trap_bomb"))
             {
                 SoundManager.Instance.PlaySound2D("HitSomething");
                 enemy.gameObject.GetComponent<Trap_Bomb>().StarExplosion();
@@ -87,15 +87,16 @@ public class Player_Combact : MonoBehaviour
         }
         foreach(Collider2D barrel in hitBarrels)
         {
-            
-                if (barrel.gameObject.name.Equals("Barrel_heavy"))
+            string name = barrel.name;
+            Debug.Log("Nome barrel" + barrel.name);
+            if (barrel.gameObject.name.StartsWith("Barrel_heavy"))
                 {
                 SoundManager.Instance.PlaySound2D("HitSomething");
 
                 barrel.gameObject.GetComponent<Barrel_Heavy>().HitDestroy();
 
                 }
-                if (barrel.gameObject.name.Equals("Barrel_light"))
+                if (barrel.gameObject.name.StartsWith("Barrel_light"))
                 {
                 SoundManager.Instance.PlaySound2D("HitSomething");
 
