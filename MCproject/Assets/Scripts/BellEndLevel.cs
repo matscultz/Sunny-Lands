@@ -41,7 +41,7 @@ public class BellEndLevel : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SoundManager.Instance.PlaySound3D("LevelCompleted", transform.position);
+            SoundManager.Instance.PlaySound2D("LevelCompleted");
             // Quando il player arriva al traguardo, completa il livello e mostra la schermata di riepilogo
             GameManager.Instance.CompleteLevel(GameManager.Instance.LevelIndex);
             uiPlay.SetActive(false);

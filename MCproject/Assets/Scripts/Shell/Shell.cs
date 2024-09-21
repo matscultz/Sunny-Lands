@@ -48,7 +48,7 @@ public class Shell : MonoBehaviour
 
     private void BouncePlayer(Rigidbody2D playerRb)
     {
-        SoundManager.Instance.PlaySound3D("Bounce Barrel", transform.position);
+        SoundManager.Instance.PlaySound2D("Bounce Barrel");
         animator.SetTrigger("isBounce");
         // Applica la forza verso l'alto per simulare il rimbalzo
         playerRb.velocity = new Vector2(playerRb.velocity.x, bounceForce);

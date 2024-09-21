@@ -35,7 +35,7 @@ public class Checkpoint : MonoBehaviour
         // Mostra il testo con il fade in
         if (textMesh != null)
         {
-            SoundManager.Instance.PlaySound3D("Checkpoint", transform.position);
+            SoundManager.Instance.PlaySound2D("Checkpoint");
             StartCoroutine(FadeTextIn());
 
             // Attendi il tempo della durata del display, poi inizia il fade out

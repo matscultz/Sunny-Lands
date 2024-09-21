@@ -10,7 +10,7 @@ public class Heal : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            SoundManager.Instance.PlaySound3D("Heal", transform.position);
+            SoundManager.Instance.PlaySound2D("Heal");
             collision.gameObject.GetComponent<Player_Health>().Heal(heal_amount);
             Destroy(gameObject);
         }

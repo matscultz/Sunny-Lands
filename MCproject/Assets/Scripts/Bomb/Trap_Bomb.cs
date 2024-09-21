@@ -88,7 +88,7 @@ public class Trap_Bomb : MonoBehaviour
         isExplode = true;
         animator.SetBool("isExplode", true);
         
-        SoundManager.Instance.PlaySound3D("Bomb", transform.position);
+        SoundManager.Instance.PlaySound2D("Bomb");
         rb.gravityScale = 0f;
         explosionCollider.enabled = true;
         boxCollider2D.enabled = false;
@@ -106,7 +106,7 @@ public class Trap_Bomb : MonoBehaviour
         {
             isHit = true;
             // Riproduci l'audio quando isHit diventa true
-            SoundManager.Instance.PlaySound3D("BombActivated", transform.position);
+            SoundManager.Instance.PlaySound2D("BombActivated");
             animator.SetBool("isHit", true);
             StartCoroutine(PlayExplosionSequence());
         }

@@ -37,7 +37,7 @@ public class Treasure_Chest_Diamond : MonoBehaviour, IOpenChest
 
     public void OpenChest()
     {
-        SoundManager.Instance.PlaySound3D("Chest", transform.position);
+        SoundManager.Instance.PlaySound2D("Chest");
 
         if (isOpen) return;  // Evita di aprire la chest più volte
         isOpen = true;
@@ -73,7 +73,7 @@ public class Treasure_Chest_Diamond : MonoBehaviour, IOpenChest
 
     void CollectSpecialCoin(GameObject specialCoin)
     {
-        SoundManager.Instance.PlaySound3D("Diamond", transform.position);
+        SoundManager.Instance.PlaySound2D("Diamond");
         diamondUIManager.AddDiamond();
 
     }

@@ -24,12 +24,12 @@ public class Barrel_Light : MonoBehaviour
             Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
             if (playerRb != null)
             {
-                SoundManager.Instance.PlaySound3D("Bounce Barrel", transform.position);
+                SoundManager.Instance.PlaySound2D("Bounce Barrel");
                 Vector2 bounce = new Vector2(0, bounceForce);
                 playerRb.velocity = new Vector2(playerRb.velocity.x, bounce.y);
                 animator.SetTrigger("Destroy");
             }
-            SoundManager.Instance.PlaySound3D("BarrelSmash", transform.position);
+            SoundManager.Instance.PlaySound2D("BarrelSmash");
             // Distruggi l'oggetto dopo un breve ritardo per permettere all'animazione di completarsi
             Invoke("DestroyObject", durataAnimazione); // Cambia il ritardo in base alla durata dell'animazione
             isDestroyed = true;
@@ -45,7 +45,7 @@ public class Barrel_Light : MonoBehaviour
 
     public void HitDestroy()
     {
-        SoundManager.Instance.PlaySound3D("BarrelSmash", transform.position);
+        SoundManager.Instance.PlaySound2D("BarrelSmash");
         animator.SetTrigger("Destroy");
         Invoke("DestroyObject", durataAnimazione);
         isDestroyed = true;

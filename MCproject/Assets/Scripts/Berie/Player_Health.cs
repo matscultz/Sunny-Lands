@@ -33,7 +33,7 @@ public class Player_Health : MonoBehaviour
         if (!isImmune)
         {
             animator.SetTrigger(hitAnimationName); // Trigger animazione colpo subito
-            SoundManager.Instance.PlaySound3D("GetHit", transform.position);
+            SoundManager.Instance.PlaySound2D("GetHit");
             health -= damage;
             if (health < 0)
                 health = 0;
@@ -57,7 +57,7 @@ public class Player_Health : MonoBehaviour
             collider.enabled = false;
         }
         gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-        SoundManager.Instance.PlaySound3D("Dead", transform.position);
+        SoundManager.Instance.PlaySound2D("Dead");
         // Avvia il processo di fade e respawn
         StartCoroutine(HandleDeath());
     }

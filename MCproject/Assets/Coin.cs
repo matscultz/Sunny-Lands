@@ -13,7 +13,7 @@ public class Coin : MonoBehaviour, ICollectible
     public void Collect()
     {
         OnGemCollected?.Invoke();
-        SoundManager.Instance.PlaySound3D("Pickup", transform.position);
+        SoundManager.Instance.PlaySound2D("Pickup");
         // This is where you can play sounds or spawn particles
         //Instantiate(collectParticle, transform.position, Quaternion.identity);
 
