@@ -49,4 +49,9 @@ public class MusicManager : MonoBehaviour
             yield return null;
         }
     }
+
+    public void SetVolume(float volume)
+    {
+        musicSource.volume = volume; // Imposta il volume attuale
+    }
 }

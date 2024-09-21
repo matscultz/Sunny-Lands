@@ -131,6 +131,6 @@ public class BellEndLevel : MonoBehaviour
     {
         Time.timeScale = 1;
         // Cambia scena per andare alla selezione dei livelli
-        UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelectionScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelection");
     }
 }

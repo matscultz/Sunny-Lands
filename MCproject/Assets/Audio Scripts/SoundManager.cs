@@ -59,4 +59,10 @@ public class SoundManager : MonoBehaviour
         }
 
     }
+    public void SetVolume(float volume)
+    {
+        sfx2DSource.volume = volume; // Imposta il volume per i suoni 2D
+                                     // Aggiungi logica per i suoni 3D se necessario
+    }
+
 }
