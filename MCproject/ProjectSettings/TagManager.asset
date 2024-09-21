@@ -18,6 +18,8 @@ TagManager:
   - Diamond
   - DiamondUIManager
   - MovingPlatform
+  - Foreground
+  - Background2
   layers:
   - Default
   - TransparentFX
@@ -36,7 +38,7 @@ TagManager:
   - Coin
   - Barrel
   - MovingPlatform
-  - 
+  - Background2
   - 
   - 
   - 
@@ -60,6 +62,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 2929612069
+    locked: 0
+  - name: Background2
+    uniqueID: 2415840951
     locked: 0
   - name: Ground
     uniqueID: 308896347
