@@ -13,12 +13,17 @@ public class AuthManager : MonoBehaviour
     public FirebaseAuth auth;
     public FirebaseUser User;
 
+    //User display variables
+    [Header("User Info Display")]
+    public TMP_Text userDisplayNameText;
+
     //Login variables
     [Header("Login")]
     public TMP_InputField emailLoginField;
     public TMP_InputField passwordLoginField;
     public TMP_Text warningLoginText;
     public TMP_Text confirmLoginText;
+    public TMP_Text confirmRegistrationText;
 
     //Register variables
     [Header("Register")]
@@ -46,11 +51,14 @@ public class AuthManager : MonoBehaviour
         });
     }
 
+
     private void InitializeFirebase()
     {
         Debug.Log("Setting up Firebase Auth");
         //Set the authentication instance object
         auth = FirebaseAuth.DefaultInstance;
+        // Aggiorna il display del nome utente
+        UpdateUserDisplayName();
     }
 
     //Function for the login button
@@ -107,6 +115,10 @@ public class AuthManager : MonoBehaviour
             //Now get the result
             User = LoginTask.Result.User;
             Debug.LogFormat("User signed in successfully: {0} ({1})", User.DisplayName, User.Email);
+
+            // Aggiorna il nome utente
+            UpdateUserDisplayName();
+
             warningLoginText.text = "";
             confirmLoginText.text = "Logged In";
         }
@@ -186,9 +198,22 @@ public class AuthManager : MonoBehaviour
                         //Now return to login screen
                         //UIManager.instance.LoginScreen();
                         warningRegisterText.text = "";
+                        confirmRegistrationText.text = "registration successfully";
                     }
                 }
             }
+        }
+    }
+
+    private void UpdateUserDisplayName()
+    {
+        if (User != null && !string.IsNullOrEmpty(User.DisplayName))
+        {
+            userDisplayNameText.text = $"Welcome, {User.DisplayName}";
+        }
+        else
+        {
+            userDisplayNameText.text = "Welcome, Guest";
         }
     }
 }
