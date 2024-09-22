@@ -82,7 +82,8 @@ public class Enemy_Octopus : MonoBehaviour, IDamageable
     {
         Debug.Log("Enemy died :(");
         animator.SetBool("isDead", true); // Attiva l'animazione di morte
-        
+        SoundManager.Instance.PlaySound2D("HitEnemies");
+
         // Disabilita il collider per evitare ulteriori interazioni
         GetComponent<Collider2D>().enabled = false;
 

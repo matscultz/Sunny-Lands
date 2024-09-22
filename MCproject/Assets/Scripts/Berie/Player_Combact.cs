@@ -87,14 +87,9 @@ public class Player_Combact : MonoBehaviour
         }
         foreach(Collider2D barrel in hitBarrels)
         {
-            string name = barrel.name;
-            Debug.Log("Nome barrel" + barrel.name);
             if (barrel.gameObject.name.StartsWith("Barrel_heavy"))
                 {
                 SoundManager.Instance.PlaySound2D("HitSomething");
-
-                barrel.gameObject.GetComponent<Barrel_Heavy>().HitDestroy();
-
                 }
                 if (barrel.gameObject.name.StartsWith("Barrel_light"))
                 {

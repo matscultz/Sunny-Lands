@@ -42,6 +42,7 @@ public class Enemy : MonoBehaviour, IDamageable
     void Die()
     {
         Debug.Log("Enemy died :(");
+        SoundManager.Instance.PlaySound2D("HitEnemies");
         animator.SetBool("isDead", true); // Attiva l'animazione di morte
         patrolling = GetComponent<Patrolling>();
         if (patrolling != null)

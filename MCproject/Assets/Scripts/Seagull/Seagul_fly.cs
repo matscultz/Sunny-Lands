@@ -43,6 +43,7 @@ public class Seagul_fly : MonoBehaviour
                 Vector2 bounce = new Vector2(0, bounceForce);
                 playerRb.velocity = new Vector2(playerRb.velocity.x, bounce.y);
                 animator.SetBool("isDead",true);
+
                 isDead = true;
             }
             // Avvia il ritardo prima della caduta
