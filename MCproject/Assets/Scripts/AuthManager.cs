@@ -201,7 +201,7 @@ public class AuthManager : MonoBehaviour
                         //Now return to login screen
                         //UIManager.instance.LoginScreen();
                         warningRegisterText.text = "";
-                        confirmRegistrationText.text = "registration successfully";
+                        confirmRegistrationText.text = "Successful";
                     }
                 }
             }
