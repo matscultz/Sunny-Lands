@@ -9,10 +9,9 @@ public class DiamondUIManager : MonoBehaviour
     private int collectedDiamonds = 0;
     private void Start()
     {
-        GameObject diamondUi = GameObject.Find("UIPlay");
         for(int i=0; i<3; i++)
         {
-            diamondSlots[i] = diamondUi.transform.GetChild(0).GetChild(i).GetComponent<Image>();
+            diamondSlots[i] = GameObject.Find("diamond"+i+1).GetComponent<Image>();
         }
     }
     // Metodo per aggiungere un diamante
