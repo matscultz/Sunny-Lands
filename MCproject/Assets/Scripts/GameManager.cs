@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     private float elapsedTime;
     private bool levelComplete = false;
     private bool[] levelsUnlocked;
-
+    private bool checkTaken = false;
     public int DeathCount { get => deathCount; set => deathCount = value; }
     public int DiamondCount { get => diamondCount; set => diamondCount = value; }
     public float ElapsedTime { get => elapsedTime; set => elapsedTime = value; }
@@ -48,10 +48,8 @@ public class GameManager : MonoBehaviour
         // Trova gli script del Player
         playerHealth = FindObjectOfType<Player_Health>();
         playerScore = FindObjectOfType<Player_Precius>();
-        if (lastCheckpointPosition == null)
-        {
-            lastCheckpointPosition = playerHealth.transform.position;
-        }
+
+        
     }
     void Update()
     {
@@ -60,12 +58,25 @@ public class GameManager : MonoBehaviour
             // Aumenta il timer del livello finché non è completato
             ElapsedTime += Time.deltaTime;
         }
-    }
+        //lastCheckpointPosition = GameObject.Find("Berie").transform.position;
 
+        //Debug.Log("check iniziale salvato(2)? " + lastCheckpointPosition);
+        if (checkTaken == false)
+        {
+            lastCheckpointPosition = GameObject.Find("Berie").transform.position;
+            Debug.Log("check iniziale salvato? " + lastCheckpointPosition);
+            checkTaken = true;
+        }
+        if (playerHealth == null)
+        {
+            playerHealth = FindObjectOfType<Player_Health>();
+        }
+    }
     // Imposta la posizione del checkpoint
     public void SetCheckpoint(Vector3 checkpointPosition)
     {
         lastCheckpointPosition = checkpointPosition;
+        checkTaken = true;
     }
 
     // Ripristina il player alla posizione del checkpoint
