@@ -1,1 +1,3 @@
-# MC-Project
+# Sunny Lands
+
+Sunny Lands è un platform 2D che segue le avventure del nostro protagonista Berie The Pig. Il gioco è composto da livelli. L'obiettivo del livello è quello di arrivare al punto finale raccogliendo il maggior numero di monete e diamanti (massimo 3 per livello) evitando di morire a causa dei nemici o delle trappole sparse nel livello. Il protagonista inizia il gioco con 100HP e in caso di morte, e quindi di perdita di tutti gli HP, rinascerà all'inizio del gioco se non si era ancora arrivati al checkpoint o al checkpoint altrimenti. In entrambi i casi il livello di HP verrà settato a 50. I livelli vengono sbloccati solo quando il precedente viene completato.
